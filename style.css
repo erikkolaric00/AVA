@@ -194,3 +194,22 @@ footer {
   color: white;
   margin-top: 60px;
 }
+
+.language-switcher {
+  display: flex;
+  gap: 5px;
+}
+
+.language-switcher button {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.language-switcher button:hover {
+  opacity: 0.9;
+}
