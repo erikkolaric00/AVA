@@ -53,51 +53,71 @@ Never miss a reservation again.
         <p>Quick and reliable answers anytime.</p>
       </div>
     </div>
- <section id="live-demo" class="demo-call">
+.demo-call {
+    padding: 80px 20px;
+    background: #eef5ff;
+}
 
-    <div class="demo-card">
+.demo-card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
 
-        <div class="demo-icon">📞</div>
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+}
 
-        <h2>Experience AVA Live</h2>
+.demo-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
 
-        <div class="demo-line"></div>
+.demo-card h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
 
-        <p>
-            Curious how AVA sounds in a real conversation?
-            Call our live demo number and speak directly with AVA.
-        </p>
+.demo-line {
+    width: 90px;
+    height: 5px;
+    background: #2563eb;
+    margin: 0 auto 35px auto;
+    border-radius: 10px;
+}
 
-        <p>
-            Ask questions about reservations, customer calls,
-            restaurant automation, multilingual support,
-            and how AVA can help your business.
-        </p>
+.demo-card p {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #475569;
+}
 
-        <p>
-            In real restaurant calls, AVA represents the restaurant
-            and answers using the restaurant's name, greeting,
-            and preferred voice.
-        </p>
+.demo-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 18px 40px;
 
-        <p>
-            Customers never hear "AVA" unless the restaurant
-            chooses to mention it.
-        </p>
+    background: #2563eb;
+    color: white;
 
-        <p>
-            At the end of the demo, AVA can connect you with our
-            team if you'd like to discuss implementing AVA in
-            your restaurant.
-        </p>
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
 
-        <a href="tel:+386XXXXXXXX" class="demo-btn">
-            📞 Call Live Demo
-        </a>
+    border-radius: 15px;
 
-    </div>
+    transition: 0.3s ease;
+}
 
-</section>
+.demo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37,99,235,0.3);
+}
   <footer>
     <p>© 2026 AVA - Automated Virtual Assistant</p>
   </footer>
