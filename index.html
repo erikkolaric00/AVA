@@ -1,5 +1,38 @@
-</div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVA - Automated Virtual Assistant</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+   <nav>
+  <img src="AVA-logo.png" alt="AVA Logo" class="logo">
+
+  <div class="language-switcher">
+    <button onclick="changeLanguage('en')">EN</button>
+    <button onclick="changeLanguage('sl')">SL</button>
+    <button onclick="changeLanguage('hr')">HR</button>
+    <button onclick="changeLanguage('de')">DE</button>
+  </div>
+
+  <a href="#demo" class="btn">Try Demo</a>
+</nav>
+
+    <div class="hero-content">
+     <h2 id="hero-title">AI Receptionist for Restaurants</h2>
+
+<p id="hero-text">
+Never miss a reservation again.
+</p>
+
+      <a href="#features" class="btn">Learn More</a>
+    </div>
+  </header>
 
   <section id="features" class="features">
     <h2>Features</h2>
@@ -20,71 +53,31 @@
         <p>Quick and reliable answers anytime.</p>
       </div>
     </div>
-.demo-call {
-    padding: 80px 20px;
-    background: #eef5ff;
-}
+  </section>
 
-.demo-card {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 60px;
-    border-radius: 25px;
-    text-align: center;
+  <section id="demo" class="demo">
+    <h2>Live Demo</h2>
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.08);
-}
+    <div class="chatbox">
+      <div id="messages">
+        <div class="bot">
+          Hello! I'm AVA. Ask me something.
+        </div>
+      </div>
 
-.demo-icon {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Type message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </section>
 
-.demo-card h2 {
-    font-size: 48px;
-    margin-bottom: 15px;
-    color: #0f172a;
-}
+  <footer>
+    <p>© 2026 AVA - Automated Virtual Assistant</p>
+  </footer>
 
-.demo-line {
-    width: 90px;
-    height: 5px;
-    background: #2563eb;
-    margin: 0 auto 35px auto;
-    border-radius: 10px;
-}
+  <script src="script.js"></script>
 
-.demo-card p {
-    max-width: 700px;
-    margin: 20px auto;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #475569;
-}
-
-.demo-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 18px 40px;
-
-    background: #2563eb;
-    color: white;
-
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 600;
-
-    border-radius: 15px;
-
-    transition: 0.3s ease;
-}
-
-.demo-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(37,99,235,0.3);
-}
-<footer>
-<p>© 2026 AVA - Automated Virtual Assistant</p>
-</footer>
+  <script src="languagescript.js"></script>
+</body>
+</html>
