@@ -1,28 +1,122 @@
-function sendMessage() {
-  const input = document.getElementById("userInput");
-  const messages = document.getElementById("messages");
+```javascript
+// =========================
+// FAQ ACCORDION
+// =========================
 
-  const text = input.value.trim();
+const faqQuestions = document.querySelectorAll(".faq-question");
 
-  if (text === "") return;
+faqQuestions.forEach(question => {
 
-  const userMessage = document.createElement("div");
-  userMessage.className = "user";
-  userMessage.innerText = text;
+    question.addEventListener("click", () => {
 
-  messages.appendChild(userMessage);
+        const answer = question.nextElementSibling;
 
-  setTimeout(() => {
-    const botMessage = document.createElement("div");
-    botMessage.className = "bot";
+        document.querySelectorAll(".faq-answer").forEach(item => {
 
-    botMessage.innerText =
-      "AVA demo response: I understand your message.";
+            if (item !== answer) {
+                item.style.display = "none";
+            }
 
-    messages.appendChild(botMessage);
+        });
 
-    messages.scrollTop = messages.scrollHeight;
-  }, 500);
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            answer.style.display = "block";
+        }
 
-  input.value = "";
-}
+    });
+
+});
+
+
+// =========================
+// LANGUAGE DROPDOWN
+// =========================
+
+const languageBtn = document.querySelector(".language-btn");
+const languageMenu = document.querySelector(".language-menu");
+
+languageBtn.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    if (languageMenu.style.display === "block") {
+        languageMenu.style.display = "none";
+    } else {
+        languageMenu.style.display = "block";
+    }
+
+});
+
+document.addEventListener("click", () => {
+    languageMenu.style.display = "none";
+});
+
+
+// =========================
+// LANGUAGE PLACEHOLDER
+// =========================
+// You can connect this later
+// to your language translation system.
+
+const languageLinks = document.querySelectorAll(".language-menu a");
+
+languageLinks.forEach(link => {
+
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const selectedLanguage = link.textContent;
+
+        languageBtn.textContent = selectedLanguage + " ▼";
+
+        languageMenu.style.display = "none";
+
+        console.log("Selected language:", selectedLanguage);
+
+        // Future:
+        // changeLanguage('en')
+        // changeLanguage('sl')
+        // changeLanguage('hr')
+        // changeLanguage('de')
+
+    });
+
+});
+
+
+// =========================
+// SMOOTH NAVIGATION
+// =========================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (target) {
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+// =========================
+// CONSOLE MESSAGE
+// =========================
+
+console.log("AVA Website Loaded Successfully");
+```
