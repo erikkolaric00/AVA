@@ -1,124 +1,402 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AVA - Automated Virtual Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVA - Automated Virtual Assistant</title>
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="hero">
-   <nav>
-  <img src="AVA-logo.png" alt="AVA Logo" class="logo">
+    <!-- NAVIGATION -->
 
-  <div class="language-switcher">
-    <button onclick="changeLanguage('en')">EN</button>
-    <button onclick="changeLanguage('sl')">SL</button>
-    <button onclick="changeLanguage('hr')">HR</button>
-    <button onclick="changeLanguage('de')">DE</button>
-  </div>
+    <header class="hero">
 
-  <a href="#demo" class="btn">Try Demo</a>
-</nav>
+        <nav class="navbar">
 
-    <div class="hero-content">
-     <h2 id="hero-title">Never Miss a Customer Inquiry Again</h2>
+            <img src="AVA-logo.png" alt="AVA Logo" class="logo">
 
-<p id="hero-text">
-AVA responds to customer inquiries 24/7, manages bookings, and saves hours of administrative work every week.
-</p>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#why-ava">Why AVA</a></li>
+                <li><a href="#pricing">Packages</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-      <a href="#features" class="btn">Learn More</a>
-    </div>
-  </header>
-<section id="features" class="features">
+            <div class="language-dropdown">
+                <button class="language-btn">
+                    English ▼
+                </button>
 
-    <h2>Why Business Choose AVA</h2>
+                <div class="language-menu">
+                    <a href="#">English</a>
+                    <a href="#">Slovenian</a>
+                    <a href="#">Croatian</a>
+                    <a href="#">German</a>
+                </div>
+            </div>
 
-    <div class="cards">
+        </nav>
 
-        <div class="card">
-            <h3>📞 Never Miss A Call</h3>
-            <p>
-                AVA answers every customer call, even during busy hours.
-            </p>
+        <!-- HERO -->
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    SAVE TIME.<br>
+                    STAY AVAILABLE.<br>
+                    GROW FASTER.
+                </h1>
+
+                <p>
+                    AVA helps businesses save time, stay available 24/7,
+                    manage bookings, and discover new opportunities for growth.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#demo" class="primary-btn">
+                        TRY DEMO
+                    </a>
+
+                    <a href="#how-it-works" class="secondary-btn">
+                        HOW IT WORKS
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="dashboard-placeholder">
+
+                    <h3>AVA Dashboard</h3>
+
+                    <div class="dashboard-card">
+                        New Inquiries: 24
+                    </div>
+
+                    <div class="dashboard-card">
+                        Bookings: 18
+                    </div>
+
+                    <div class="dashboard-card">
+                        Customer Insights
+                    </div>
+
+                    <div class="dashboard-card">
+                        Online 24/7
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>📅 More Bookings</h3>
-            <p>
-                Turn missed calls into confirmed reservations and appointments automatically.
-            </p>
+    </header>
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how-it-works" class="section">
+
+        <h2>How It Works</h2>
+
+        <div class="steps">
+
+            <div class="step-card">
+                <span>1</span>
+                <h3>Connect Your Business</h3>
+                <p>
+                    Provide AVA with information about your business.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <span>2</span>
+                <h3>AVA Learns</h3>
+                <p>
+                    AVA understands your services, policies, and customer needs.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <span>3</span>
+                <h3>AVA Helps Your Customers</h3>
+                <p>
+                    AVA responds to inquiries and manages bookings.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <span>4</span>
+                <h3>Grow Your Business</h3>
+                <p>
+                    AVA provides insights and recommendations based on customer interactions.
+                </p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>⏰ Available 24/7</h3>
-            <p>
-                AVA works day and night, even when your business is closed.
-            </p>
+    </section>
+
+    <!-- WHY AVA -->
+
+    <section id="why-ava" class="section">
+
+        <h2>Why AVA?</h2>
+
+        <div class="benefits-grid">
+
+            <div class="benefit-card">
+                <h3>⏰ Save Time</h3>
+                <p>Reduce repetitive administrative work.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>🌍 Available 24/7</h3>
+                <p>Never miss a customer inquiry, even outside business hours.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>📅 Smart Booking Management</h3>
+                <p>Automatically organize bookings and reservations in one place.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>⭐ Improve Customer Experience</h3>
+                <p>Deliver fast, reliable responses that keep customers satisfied.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>📈 Learn What Customers Want</h3>
+                <p>See what customers ask for most and discover opportunities for growth.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>🌐 Multi-Language Support</h3>
+                <p>Communicate with customers in multiple languages.</p>
+            </div>
+
         </div>
 
-    </div>
+        <div class="idea-box">
 
-</section>
+            <h3>Have an Idea for AVA?</h3>
 
-<section id="demo" class="demo-call">
+            <p>
+                We're constantly improving. Share your idea and help shape the future of AVA.
+            </p>
 
-    <div class="demo-card">
+        </div>
 
-        <div class="demo-icon">📞</div>
+    </section>
+
+    <!-- DEMO -->
+
+    <section id="demo" class="demo-section">
 
         <h2>Experience AVA Live</h2>
 
-        <div class="demo-line"></div>
-
-        <p class="demo-intro">
+        <p>
             Call our live demo and experience how AVA handles customer conversations in real time.
         </p>
 
         <div class="demo-features">
 
-            <div class="demo-feature">
-                ✅ Answer reservations automatically
+            <div>✅ Answer reservations automatically</div>
+            <div>✅ Handle customer questions 24/7</div>
+            <div>✅ Available in multiple languages</div>
+            <div>✅ Adapts to your business</div>
+
+        </div>
+
+        <div class="free-call">
+            Calls are completely free of charge.
+        </div>
+
+        <a href="tel:+386XXXXXXXX" class="primary-btn">
+            📞 CALL LIVE DEMO
+        </a>
+
+    </section>
+
+    <!-- PRICING -->
+
+    <section id="pricing" class="section">
+
+        <h2>Choose Your AVA Plan</h2>
+
+        <div class="pricing-grid">
+
+            <div class="pricing-card">
+
+                <h3>AVA Starter</h3>
+
+                <div class="price">€29/mo</div>
+
+                <ul>
+                    <li>Email automation</li>
+                    <li>Booking management</li>
+                    <li>FAQ responses</li>
+                    <li>Multi-language support</li>
+                    <li>AVA dashboard</li>
+                </ul>
+
+                <a href="#contact" class="primary-btn">Get Started</a>
+
             </div>
 
-            <div class="demo-feature">
-                ✅ Handle customer questions 24/7
+            <div class="pricing-card featured">
+
+                <div class="popular-tag">
+                    MOST POPULAR
+                </div>
+
+                <h3>AVA Professional</h3>
+
+                <div class="price">€59/mo</div>
+
+                <ul>
+                    <li>Everything in Starter</li>
+                    <li>Customer trend analysis</li>
+                    <li>Business recommendations</li>
+                    <li>Monthly reports</li>
+                    <li>Priority support</li>
+                </ul>
+
+                <a href="#contact" class="primary-btn">Get Started</a>
+
             </div>
 
-            <div class="demo-feature">
-                ✅ Available in multiple languages
-            </div>
+            <div class="pricing-card">
 
-            <div class="demo-feature">
-                ✅ Adapts to your business
+                <h3>AVA Complete</h3>
+
+                <div class="price">€99/mo</div>
+
+                <ul>
+                    <li>Everything in Professional</li>
+                    <li>AI phone answering</li>
+                    <li>Call summaries</li>
+                    <li>Voice receptionist</li>
+                    <li>Coming Soon</li>
+                </ul>
+
+                <a href="#contact" class="primary-btn">Notify Me</a>
+
             </div>
 
         </div>
 
-        <p class="demo-note">
-            During real customer calls, AVA represents your business using your restaurant's name, greeting and preferred voice.
+    </section>
+
+    <!-- FAQ -->
+
+    <section id="faq" class="section">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Does AVA replace my staff?
+                </button>
+
+                <div class="faq-answer">
+                    No. AVA automates routine customer communication so your team can focus on more important tasks.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can AVA manage bookings?
+                </button>
+
+                <div class="faq-answer">
+                    Yes. AVA can organize booking and reservation requests directly in your AVA dashboard.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is AVA available 24/7?
+                </button>
+
+                <div class="faq-answer">
+                    Yes. AVA can respond to customers at any time, even outside business hours.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can AVA communicate in multiple languages?
+                </button>
+
+                <div class="faq-answer">
+                    Yes. AVA supports multiple languages including English, Slovenian, Croatian and German.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does setup take?
+                </button>
+
+                <div class="faq-answer">
+                    Most businesses can get started within minutes.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+        <h2>
+            READY TO SAVE TIME AND GROW YOUR BUSINESS?
+        </h2>
+
+        <p>
+            Let AVA handle customer communication while you focus on running your business.
         </p>
 
-        <p class="free-call">
-     Calls are completely free of charge.
-</p>
+        <a href="#demo" class="primary-btn">
+            TRY DEMO
+        </a>
 
-<a href="tel:+386XXXXXXXX" class="demo-btn">
-    📞 Call Live Demo
-</a>
+    </section>
 
-    </div>
+    <!-- FOOTER -->
 
-</section>
-  <footer>
-    <p>© 2026 AVA - Automated Virtual Assistant</p>
-  </footer>
+    <footer id="contact">
 
-  <script src="script.js"></script>
+        <img src="AVA-logo.png" alt="AVA Logo" class="footer-logo">
 
-  <script src="languagescript.js"></script>
+        <p>
+            AI Assistant for Modern Businesses
+        </p>
+
+        <p>
+            erik.kolaric129@gmail.com
+        </p>
+
+        <p>
+            © 2026 AVA. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
+```
