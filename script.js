@@ -1,4 +1,4 @@
-```javascript
+
 // =========================
 // FAQ ACCORDION
 // =========================
@@ -119,4 +119,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // =========================
 
 console.log("AVA Website Loaded Successfully");
-```
