@@ -481,3 +481,6 @@ body{
     width:100%;
     overflow-x:hidden;
 }
+.hidden-demo{
+    display:none;
+}
