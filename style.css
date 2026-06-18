@@ -54,39 +54,33 @@ body{
     position:relative;
 }
 
-.language-btn{
-    background:white;
-    border:none;
-    padding:10px 16px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-
 .language-menu{
     position:absolute;
-    top:50px;
+    top:55px;
     right:0;
     background:white;
-    width:160px;
+    min-width:180px;
     border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
     display:none;
     overflow:hidden;
+    z-index:1000;
+}
+
+.language-menu.show{
+    display:block;
 }
 
 .language-menu a{
     display:block;
-    padding:12px;
+    padding:12px 16px;
     text-decoration:none;
-    color:#0f172a;
+    color:#111827;
 }
 
 .language-menu a:hover{
-    background:#f1f5f9;
+    background:#f3f4f6;
 }
-
 
 /* HERO */
 
