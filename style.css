@@ -429,29 +429,27 @@ footer{
 
 .step-card{
     background:white;
-    border-radius:28px;
-    padding:35px 25px;
+    padding:30px;
+    border-radius:24px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-
     text-align:center;
 
     min-height:320px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-
-    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
 .step-card:hover{
     transform:translateY(-5px);
 }
+
 .step-icon{
-    width:80px;
-    height:80px;
+    width:70px;
+    height:70px;
 
     display:flex;
     align-items:center;
@@ -460,22 +458,24 @@ footer{
     background:#eff6ff;
     color:#2563eb;
 
-    border-radius:20px;
+    border-radius:18px;
 
-    font-size:34px;
+    font-size:28px;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .step-card h3{
     font-size:28px;
+    line-height:1.2;
     margin-bottom:15px;
+
     color:#0f172a;
 }
 
 .step-card p{
     font-size:17px;
-    line-height:1.7;
+    line-height:1.6;
     color:#64748b;
 
     max-width:260px;
