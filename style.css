@@ -423,20 +423,35 @@ footer{
 .steps-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:30px;
+    gap:25px;
+    align-items:stretch;
 }
 
 .step-card{
     background:white;
-    padding:40px;
     border-radius:28px;
-    text-align:left;
+    padding:35px 25px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    min-height:320px;
+
     box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    transition:.3s;
 }
 
+.step-card:hover{
+    transform:translateY(-5px);
+}
 .step-icon{
-    width:72px;
-    height:72px;
+    width:80px;
+    height:80px;
 
     display:flex;
     align-items:center;
@@ -447,21 +462,23 @@ footer{
 
     border-radius:20px;
 
-    font-size:30px;
+    font-size:34px;
 
     margin-bottom:25px;
 }
 
 .step-card h3{
-    font-size:34px;
-    margin-bottom:20px;
+    font-size:28px;
+    margin-bottom:15px;
     color:#0f172a;
 }
 
 .step-card p{
-    font-size:18px;
+    font-size:17px;
     line-height:1.7;
-    color:#475569;
+    color:#64748b;
+
+    max-width:260px;
 }
 
 .questions-box{
