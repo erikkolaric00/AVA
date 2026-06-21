@@ -175,7 +175,7 @@ body{
 /* SECTIONS */
 
 .section{
-    padding:100px 60px;
+    padding:50px 60px;
 }
 
 .section h2{
@@ -409,7 +409,7 @@ footer{
 /* HOW IT WORKS */
 
 .how-it-works{
-    padding:120px 8%;
+    padding:70px 8% 30px;
     text-align:center;
     background:#f8fafc;
 }
@@ -465,7 +465,7 @@ footer{
 }
 
 .questions-box{
-    margin-top:70px;
+    margin-top:30px;
 }
 
 .questions-box h3{
