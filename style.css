@@ -118,6 +118,18 @@ body{
     color:#475569;
     margin-bottom:35px;
 }
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:700px;
+    height:auto;
+}
 
 .hero-buttons{
     display:flex;
