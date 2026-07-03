@@ -536,3 +536,28 @@ body{
 .hidden-demo{
     display:none;
 }
+#development-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.97);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.overlay-content{
+    text-align:center;
+    padding:20px;
+}
+
+.overlay-content h1{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.overlay-content p{
+    font-size:1.1rem;
+    color:#64748b;
+    margin-bottom:8px;
+}
