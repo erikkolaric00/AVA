@@ -119,3 +119,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // =========================
 
 console.log("AVA Website Loaded Successfully");
+
+let devMode = false;
+
+// Listen for keyboard shortcut: Ctrl + D + V
+document.addEventListener("keydown", function (e) {
+
+    if (e.ctrlKey && e.key.toLowerCase() === "d") {
+        devMode = true;
+    }
+
+    if (e.ctrlKey && e.key.toLowerCase() === "v" && devMode) {
+
+        const overlay = document.getElementById("development-overlay");
+
+        if (overlay) {
+            overlay.style.display = "none";
+        }
+
+        devMode = false;
+    }
+
+});
