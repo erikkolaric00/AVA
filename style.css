@@ -17,6 +17,13 @@ body{
     line-height:1.6;
 }
 
+/* GLOBAL CONTAINER */
+
+.container{
+    width:min(1200px, 92%);
+    margin:0 auto;
+}
+
 /* NAVIGATION */
 
 .navbar{
