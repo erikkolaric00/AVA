@@ -120,24 +120,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 console.log("AVA Website Loaded Successfully");
 
-let devMode = false;
+// =========================
+// DEV MODE PASSWORD
+// =========================
 
-// Listen for keyboard shortcut: Ctrl + D + V
-document.addEventListener("keydown", function (e) {
+const DEV_PASSWORD = "AVA2026"; // change this password anytime
 
-    if (e.ctrlKey && e.key.toLowerCase() === "d") {
-        devMode = true;
+document.addEventListener("keydown", function(e){
+
+    // Press CTRL + SHIFT + A to unlock dev mode
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a"){
+
+        const password = prompt("Enter developer password:");
+
+        if(password === DEV_PASSWORD){
+            const devScreen = document.getElementById("dev-screen");
+
+            if(devScreen){
+                devScreen.style.display = "none";
+            }
+
+            localStorage.setItem("avaDevMode", "true");
+        } else {
+            alert("Wrong password");
+        }
     }
 
-    if (e.ctrlKey && e.key.toLowerCase() === "v" && devMode) {
+});
 
-        const overlay = document.getElementById("development-overlay");
+// Keep website unlocked after correct password
+window.addEventListener("load", function(){
 
-        if (overlay) {
-            overlay.style.display = "none";
+    if(localStorage.getItem("avaDevMode") === "true"){
+        const devScreen = document.getElementById("dev-screen");
+
+        if(devScreen){
+            devScreen.style.display = "none";
         }
-
-        devMode = false;
     }
 
 });
