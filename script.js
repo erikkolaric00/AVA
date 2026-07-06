@@ -156,3 +156,33 @@ window.addEventListener("load", function(){
     }
 
 });
+
+// =========================
+// SCROLL ANIMATIONS
+// =========================
+
+const animatedElements = document.querySelectorAll(
+    ".step-card, .benefit-card, .pricing-card, .faq-item"
+);
+
+animatedElements.forEach(function(element){
+    element.classList.add("scroll-animate");
+});
+
+const observer = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold:0.15
+});
+
+animatedElements.forEach(function(element){
+    observer.observe(element);
+});
