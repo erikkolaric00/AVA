@@ -10,7 +10,7 @@ const translations = {
     },
 
     sl: {
-        heroTitle: "PRIHRANITE ČAS.<br>BODITE VEDNO DOSTOPNI.<br>RASTITE HITREJE.",
+        heroTitle: "PRIHRANITE ČAS.<br>BODITE VEDNO DOSEGLJIVI.<br>RASTITE HITREJE.",
         heroText: "AVA pomaga podjetjem prihraniti čas, ostati dosegljiva 24/7, upravljati rezervacije in odkrivati nove priložnosti za rast."
     },
 
@@ -25,6 +25,11 @@ const translations = {
     }
 
 };
+
+
+// =========================
+// CHANGE LANGUAGE
+// =========================
 
 function changeLanguage(lang){
 
@@ -44,13 +49,6 @@ function changeLanguage(lang){
     updateLanguageFlag(lang);
 }
 
-window.addEventListener("load", function(){
-
-    const savedLanguage = localStorage.getItem("language") || "en";
-
-    changeLanguage(savedLanguage);
-
-});
 
 // =========================
 // FAQ ACCORDION
@@ -103,6 +101,7 @@ if(languageBtn && languageMenu){
 
 }
 
+
 // =========================
 // LANGUAGE FLAG UPDATE
 // =========================
@@ -131,6 +130,21 @@ function updateLanguageFlag(lang){
         languageMenu.classList.remove("show");
     }
 }
+
+
+// =========================
+// LOAD SAVED LANGUAGE
+// =========================
+
+window.addEventListener("load", function(){
+
+    const savedLanguage = localStorage.getItem("language") || "en";
+
+    changeLanguage(savedLanguage);
+
+});
+
+
 // =========================
 // SMOOTH NAVIGATION
 // =========================
@@ -164,15 +178,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 console.log("AVA Website Loaded Successfully");
 
+
 // =========================
 // DEV MODE PASSWORD
 // =========================
 
-const DEV_PASSWORD = "AVA2026"; // change this password anytime
+const DEV_PASSWORD = "AVA2026";
 
 document.addEventListener("keydown", function(e){
 
-    // Press CTRL + SHIFT + A to unlock dev mode
     if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a"){
 
         const password = prompt("Enter developer password:");
@@ -192,7 +206,11 @@ document.addEventListener("keydown", function(e){
 
 });
 
-// Keep website unlocked after correct password
+
+// =========================
+// KEEP WEBSITE UNLOCKED
+// =========================
+
 window.addEventListener("load", function(){
 
     if(localStorage.getItem("avaDevMode") === "true"){
@@ -204,6 +222,7 @@ window.addEventListener("load", function(){
     }
 
 });
+
 
 // =========================
 // SCROLL ANIMATIONS
