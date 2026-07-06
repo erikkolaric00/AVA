@@ -544,6 +544,7 @@ body{
     inset:0;
     width:100%;
     min-height:100vh;
+    min-height:100dvh;
 
     background:linear-gradient(
         135deg,
@@ -557,24 +558,30 @@ body{
 
     text-align:center;
     z-index:999999;
+
+    padding:24px;
+    overflow:hidden;
 }
 
 .dev-screen-content{
-    width:92%;
+    width:100%;
     max-width:700px;
-    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
 .dev-image{
-    width:140px;
-    max-width:28vw;
+    width:clamp(130px, 22vw, 220px);
     height:auto;
-    margin-bottom:18px;
+    margin-bottom:22px;
 }
 
 .dev-screen-content h1{
-    font-size:clamp(2rem, 4vw, 3.5rem);
-    line-height:1.1;
+    font-size:clamp(2rem, 6vw, 4rem);
+    line-height:1.05;
     color:#0f172a;
     margin-bottom:18px;
     font-weight:800;
@@ -582,13 +589,42 @@ body{
 }
 
 .dev-screen-content p{
-    font-size:clamp(0.95rem, 1.5vw, 1.25rem);
+    font-size:clamp(1rem, 2.5vw, 1.35rem);
     color:#475569;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .dev-screen-content h3{
-    font-size:clamp(1rem, 1.8vw, 1.4rem);
+    font-size:clamp(1.1rem, 3vw, 1.6rem);
     color:#0f172a;
-    margin-top:18px;
+    margin-top:20px;
+}
+
+/* PHONE FIX */
+
+@media(max-width:600px){
+
+    #dev-screen{
+        padding:20px;
+    }
+
+    .dev-image{
+        width:170px;
+        max-width:70vw;
+        margin-bottom:20px;
+    }
+
+    .dev-screen-content h1{
+        font-size:2.3rem;
+        white-space:normal;
+    }
+
+    .dev-screen-content p{
+        font-size:1rem;
+        max-width:320px;
+    }
+
+    .dev-screen-content h3{
+        font-size:1.2rem;
+    }
 }
