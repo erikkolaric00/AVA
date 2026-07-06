@@ -48,14 +48,22 @@
             <div class="language-dropdown">
                 <button class="language-btn">English ▼</button>
 
-                <div class="language-menu">
-                    <a href="#">English</a>
-                    <a href="#">Slovenščina</a>
-                    <a href="#">Hrvatski</a>
-                    <a href="#">Deutsch</a>
-                </div>
-            </div>
+                <div class="language-dropdown">
 
+    <button class="language-btn" id="languageBtn">
+        🇬🇧 ▼
+    </button>
+
+    <div class="language-menu" id="languageMenu">
+
+        <button onclick="changeLanguage('en')">🇬🇧</button>
+        <button onclick="changeLanguage('sl')">🇸🇮</button>
+        <button onclick="changeLanguage('hr')">🇭🇷</button>
+        <button onclick="changeLanguage('de')">🇩🇪</button>
+
+    </div>
+
+</div>
         </nav>
 
         <!-- HERO CONTENT -->
