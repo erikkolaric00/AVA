@@ -51,38 +51,33 @@ if(languageBtn && languageMenu){
 }
 
 // =========================
-// LANGUAGE PLACEHOLDER
+// LANGUAGE FLAG UPDATE
 // =========================
-// You can connect this later
-// to your language translation system.
 
-const languageLinks = document.querySelectorAll(".language-menu a");
+function updateLanguageFlag(lang){
 
-languageLinks.forEach(link => {
+    if(!languageBtn) return;
 
-    link.addEventListener("click", (e) => {
+    if(lang === "en"){
+        languageBtn.innerHTML = '<img src="https://flagcdn.com/w40/gb.png" alt="English">';
+    }
 
-        e.preventDefault();
+    if(lang === "sl"){
+        languageBtn.innerHTML = '<img src="https://flagcdn.com/w40/si.png" alt="Slovenian">';
+    }
 
-        const selectedLanguage = link.textContent;
+    if(lang === "hr"){
+        languageBtn.innerHTML = '<img src="https://flagcdn.com/w40/hr.png" alt="Croatian">';
+    }
 
-        languageBtn.textContent = selectedLanguage + " ▼";
+    if(lang === "de"){
+        languageBtn.innerHTML = '<img src="https://flagcdn.com/w40/de.png" alt="German">';
+    }
 
-        languageMenu.style.display = "none";
-
-        console.log("Selected language:", selectedLanguage);
-
-        // Future:
-        // changeLanguage('en')
-        // changeLanguage('sl')
-        // changeLanguage('hr')
-        // changeLanguage('de')
-
-    });
-
-});
-
-
+    if(languageMenu){
+        languageMenu.classList.remove("show");
+    }
+}
 // =========================
 // SMOOTH NAVIGATION
 // =========================
