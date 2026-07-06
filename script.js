@@ -1,3 +1,56 @@
+// =========================
+// LANGUAGE TRANSLATIONS
+// =========================
+
+const translations = {
+
+    en: {
+        heroTitle: "SAVE TIME.<br>STAY AVAILABLE.<br>GROW FASTER.",
+        heroText: "AVA helps businesses save time, stay available 24/7, manage bookings, and discover new opportunities for growth."
+    },
+
+    sl: {
+        heroTitle: "PRIHRANITE ČAS.<br>BODITE VEDNO DOSTOPNI.<br>RASTITE HITREJE.",
+        heroText: "AVA pomaga podjetjem prihraniti čas, ostati dosegljiva 24/7, upravljati rezervacije in odkrivati nove priložnosti za rast."
+    },
+
+    hr: {
+        heroTitle: "UŠTEDITE VRIJEME.<br>BUDITE UVIJEK DOSTUPNI.<br>RASTITE BRŽE.",
+        heroText: "AVA pomaže poduzećima uštedjeti vrijeme, biti dostupna 24/7, upravljati rezervacijama i otkrivati nove prilike za rast."
+    },
+
+    de: {
+        heroTitle: "SPAREN SIE ZEIT.<br>BLEIBEN SIE ERREICHBAR.<br>WACHSEN SIE SCHNELLER.",
+        heroText: "AVA hilft Unternehmen, Zeit zu sparen, rund um die Uhr verfügbar zu bleiben, Buchungen zu verwalten und neue Wachstumschancen zu entdecken."
+    }
+
+};
+
+function changeLanguage(lang){
+
+    const heroTitle = document.getElementById("hero-title");
+    const heroText = document.getElementById("hero-text");
+
+    if(heroTitle){
+        heroTitle.innerHTML = translations[lang].heroTitle;
+    }
+
+    if(heroText){
+        heroText.innerText = translations[lang].heroText;
+    }
+
+    localStorage.setItem("language", lang);
+
+    updateLanguageFlag(lang);
+}
+
+window.addEventListener("load", function(){
+
+    const savedLanguage = localStorage.getItem("language") || "en";
+
+    changeLanguage(savedLanguage);
+
+});
 
 // =========================
 // FAQ ACCORDION
