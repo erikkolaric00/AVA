@@ -34,25 +34,21 @@ faqQuestions.forEach(question => {
 // LANGUAGE DROPDOWN
 // =========================
 
-const languageBtn =
-document.querySelector(".language-btn");
+const languageBtn = document.getElementById("languageBtn");
+const languageMenu = document.getElementById("languageMenu");
 
-const languageMenu =
-document.querySelector(".language-menu");
+if(languageBtn && languageMenu){
 
-languageBtn.addEventListener("click", (e) => {
+    languageBtn.addEventListener("click", function(e){
+        e.stopPropagation();
+        languageMenu.classList.toggle("show");
+    });
 
-    e.stopPropagation();
+    document.addEventListener("click", function(){
+        languageMenu.classList.remove("show");
+    });
 
-    languageMenu.classList.toggle("show");
-
-});
-
-document.addEventListener("click", () => {
-
-    languageMenu.classList.remove("show");
-
-});
+}
 
 // =========================
 // LANGUAGE PLACEHOLDER
