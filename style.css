@@ -664,18 +664,7 @@ body{
    SIMPLE WEBSITE ANIMATIONS
 ========================= */
 
-/* Smooth floating animation */
-@keyframes avaFloat{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-}
+
 
 /* Fade up animation */
 @keyframes fadeUp{
@@ -689,10 +678,7 @@ body{
     }
 }
 
-/* Hero image floating */
-.hero-image img{
-    animation:avaFloat 5s ease-in-out infinite;
-}
+
 
 /* Development screen image floating */
 .dev-image{
