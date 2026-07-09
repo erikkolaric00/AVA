@@ -351,50 +351,91 @@ body{
 
 /* PRICING */
 
-.pricing-grid{
+/* =========================
+   COMPACT PRICING SECTION
+========================= */
+
+.pricing-grid-compact{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+    grid-template-columns:repeat(5, 1fr);
+    gap:18px;
+    align-items:stretch;
 }
 
-.pricing-card{
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    position:relative;
+.compact-card{
+    padding:24px 18px;
+    border-radius:22px;
+    min-height:420px;
 }
 
-.featured{
-    border:3px solid #2563eb;
+.compact-card h3{
+    font-size:1.25rem;
+    margin-bottom:8px;
 }
 
-.popular-tag{
-    position:absolute;
-    top:-15px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#2563eb;
-    color:white;
-    padding:8px 16px;
-    border-radius:30px;
-    font-size:0.8rem;
-    font-weight:bold;
-}
-
-.price{
-    font-size:2.4rem;
-    font-weight:bold;
-    margin:20px 0;
-}
-
-.pricing-card ul{
-    list-style:none;
-    margin-bottom:30px;
-}
-
-.pricing-card li{
+.compact-card .price{
+    font-size:2rem;
     margin:12px 0;
+}
+
+.compact-card .price span{
+    font-size:0.85rem;
+    color:#64748b;
+    font-weight:500;
+}
+
+.plan-description{
+    font-size:0.9rem;
+    color:#64748b;
+    line-height:1.5;
+    margin-bottom:18px;
+    min-height:65px;
+}
+
+.compact-card ul{
+    margin-bottom:24px;
+}
+
+.compact-card li{
+    font-size:0.9rem;
+    margin:9px 0;
+}
+
+.compact-card .primary-btn{
+    padding:11px 16px;
+    font-size:0.9rem;
+    width:100%;
+    text-align:center;
+}
+
+.pricing-card.featured{
+    transform:translateY(-10px);
+}
+
+.pricing-card.featured:hover{
+    transform:translateY(-16px);
+}
+
+/* Tablet */
+@media(max-width:1200px){
+    .pricing-grid-compact{
+        grid-template-columns:repeat(3, 1fr);
+    }
+}
+
+/* Phone */
+@media(max-width:800px){
+    .pricing-grid-compact{
+        grid-template-columns:1fr;
+    }
+
+    .pricing-card.featured{
+        transform:none;
+    }
+
+    .pricing-card.featured:hover{
+        transform:translateY(-6px);
+    }
 }
 
 /* FAQ */
