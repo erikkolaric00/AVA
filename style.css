@@ -806,3 +806,88 @@ body{
         transition:none !important;
     }
 }
+/* =========================
+   FIX 5 PRICING CARDS SAME ROW
+========================= */
+
+#pricing .container{
+    width:96%;
+    max-width:1500px;
+}
+
+#pricing .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(5, minmax(0, 1fr));
+    gap:14px;
+    align-items:stretch;
+}
+
+#pricing .pricing-card{
+    padding:20px 14px;
+    border-radius:18px;
+    min-height:360px;
+}
+
+#pricing .pricing-card h3{
+    font-size:1.1rem;
+    margin-bottom:6px;
+}
+
+#pricing .price{
+    font-size:1.6rem;
+    margin:10px 0;
+}
+
+#pricing .price span{
+    font-size:0.75rem;
+    color:#64748b;
+    font-weight:500;
+}
+
+#pricing .plan-description{
+    font-size:0.78rem;
+    line-height:1.4;
+    color:#64748b;
+    margin-bottom:12px;
+    min-height:48px;
+}
+
+#pricing .pricing-card ul{
+    margin-bottom:16px;
+}
+
+#pricing .pricing-card li{
+    font-size:0.78rem;
+    margin:7px 0;
+}
+
+#pricing .primary-btn{
+    padding:9px 12px;
+    font-size:0.8rem;
+    width:100%;
+    text-align:center;
+}
+
+#pricing .popular-tag{
+    font-size:0.65rem;
+    padding:6px 12px;
+    top:-13px;
+}
+
+#pricing .featured{
+    transform:none;
+}
+
+/* Medium screens */
+@media(max-width:1200px){
+    #pricing .pricing-grid{
+        grid-template-columns:repeat(3, 1fr);
+    }
+}
+
+/* Phone */
+@media(max-width:800px){
+    #pricing .pricing-grid{
+        grid-template-columns:1fr;
+    }
+}
