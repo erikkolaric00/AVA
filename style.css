@@ -807,87 +807,86 @@ body{
     }
 }
 /* =========================
-   FIX 5 PRICING CARDS SAME ROW
+   PRICING - 5 SMALL CARDS SAME ROW
 ========================= */
 
 #pricing .container{
-    width:96%;
-    max-width:1500px;
+    width:98%;
+    max-width:1700px;
 }
 
 #pricing .pricing-grid{
-    display:grid;
-    grid-template-columns:repeat(5, minmax(0, 1fr));
-    gap:14px;
+    display:grid !important;
+    grid-template-columns:repeat(5, minmax(0, 1fr)) !important;
+    gap:10px !important;
     align-items:stretch;
 }
 
 #pricing .pricing-card{
-    padding:20px 14px;
-    border-radius:18px;
-    min-height:360px;
+    padding:16px 10px !important;
+    border-radius:16px;
+    min-height:320px;
 }
 
 #pricing .pricing-card h3{
-    font-size:1.1rem;
-    margin-bottom:6px;
+    font-size:0.95rem;
+    margin-bottom:5px;
 }
 
 #pricing .price{
-    font-size:1.6rem;
-    margin:10px 0;
+    font-size:1.35rem;
+    margin:6px 0;
 }
 
 #pricing .price span{
-    font-size:0.75rem;
+    font-size:0.65rem;
     color:#64748b;
     font-weight:500;
 }
 
 #pricing .plan-description{
-    font-size:0.78rem;
-    line-height:1.4;
+    font-size:0.68rem;
+    line-height:1.35;
     color:#64748b;
-    margin-bottom:12px;
-    min-height:48px;
+    margin-bottom:8px;
+    min-height:40px;
 }
 
 #pricing .pricing-card ul{
-    margin-bottom:16px;
+    margin-bottom:12px;
 }
 
 #pricing .pricing-card li{
-    font-size:0.78rem;
-    margin:7px 0;
+    font-size:0.68rem;
+    margin:5px 0;
 }
 
 #pricing .primary-btn{
-    padding:9px 12px;
-    font-size:0.8rem;
+    padding:8px 8px;
+    font-size:0.68rem;
     width:100%;
     text-align:center;
 }
 
 #pricing .popular-tag{
-    font-size:0.65rem;
-    padding:6px 12px;
-    top:-13px;
+    font-size:0.58rem;
+    padding:5px 10px;
+    top:-12px;
 }
 
 #pricing .featured{
-    transform:none;
+    transform:none !important;
 }
 
-/* Medium screens */
-@media(max-width:1200px){
+/* Only switch layout on smaller screens */
+@media(max-width:900px){
     #pricing .pricing-grid{
-        grid-template-columns:repeat(3, 1fr);
+        grid-template-columns:repeat(2, 1fr) !important;
     }
 }
 
-/* Phone */
-@media(max-width:800px){
+@media(max-width:600px){
     #pricing .pricing-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr !important;
     }
 }
