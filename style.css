@@ -315,38 +315,93 @@ body{
 /* DEMO */
 
 .demo-section{
-    text-align:center;
-    padding:100px 60px;
-    background:#eef5ff;
+    padding:70px 0;
+    background:#f8fbff;
 }
 
-.demo-section h2{
-    font-size:2.8rem;
-    margin-bottom:20px;
+.demo-card{
+    background:linear-gradient(
+        135deg,
+        #eff6ff,
+        #f8fbff
+    );
+
+    border:1px solid #dbeafe;
+    border-radius:24px;
+
+    padding:45px 55px;
+
+    box-shadow:0 14px 35px rgba(15,23,42,0.06);
 }
 
-.demo-section p{
-    max-width:700px;
-    margin:auto;
+.demo-content{
+    max-width:720px;
 }
 
-.demo-features{
-    margin:35px 0;
-}
-
-.demo-features div{
-    margin:10px 0;
-}
-
-.free-call{
+.demo-label{
     display:inline-block;
-    margin-bottom:25px;
-    background:#ecfdf5;
-    color:#15803d;
-    border:1px solid #86efac;
-    padding:12px 20px;
-    border-radius:12px;
-    font-weight:600;
+
+    background:white;
+    color:#2563eb;
+
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:1px;
+
+    padding:8px 14px;
+    border-radius:999px;
+
+    margin-bottom:18px;
+}
+
+.demo-card h2{
+    font-size:2.4rem;
+    color:#0f172a;
+    margin-bottom:14px;
+}
+
+.demo-card p{
+    font-size:1.05rem;
+    color:#475569;
+    line-height:1.7;
+    max-width:650px;
+    margin-bottom:28px;
+}
+
+.demo-buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.demo-card .primary-btn{
+    background:#2563eb;
+}
+
+.demo-card .secondary-btn{
+    background:white;
+    border:2px solid #bfdbfe;
+    color:#2563eb;
+}
+
+/* Phone */
+@media(max-width:700px){
+    .demo-card{
+        padding:35px 25px;
+        text-align:center;
+    }
+
+    .demo-content{
+        max-width:100%;
+    }
+
+    .demo-card h2{
+        font-size:2rem;
+    }
+
+    .demo-buttons{
+        justify-content:center;
+    }
 }
 
 /* PRICING */
