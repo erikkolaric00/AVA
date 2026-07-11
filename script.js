@@ -253,3 +253,31 @@ const observer = new IntersectionObserver(function(entries){
 animatedElements.forEach(function(element){
     observer.observe(element);
 });
+// =========================
+// CONTACT FORM
+// =========================
+
+const contactForm = document.getElementById("contactForm");
+
+if(contactForm){
+
+    contactForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const name = document.getElementById("contactName").value;
+        const email = document.getElementById("contactEmail").value;
+        const message = document.getElementById("contactMessage").value;
+
+        const subject = encodeURIComponent("New AVA Website Inquiry");
+
+        const body = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Message:\n" + message
+        );
+
+        window.location.href =
+            "mailto:avaerikk@gmail.com?subject=" + subject + "&body=" + body;
+    });
+
+}
