@@ -415,17 +415,40 @@
             </p>
 
             <div class="contact-action">
-                <h3>Contact AVA</h3>
+    <h3>Contact AVA</h3>
 
-                <p>
-                    Your message will be answered by a real person from the AVA team.
-                </p>
+    <p>
+        Your message will be answered by a real person from the AVA team.
+    </p>
 
-                <a href="mailto:erik.kolaric129@gmail.com" class="primary-btn">
-                    Send Email
-                </a>
-            </div>
+    <form id="contactForm" class="contact-form">
 
+        <input 
+            type="text" 
+            id="contactName" 
+            placeholder="Your name" 
+            required
+        >
+
+        <input 
+            type="email" 
+            id="contactEmail" 
+            placeholder="Your email" 
+            required
+        >
+
+        <textarea 
+            id="contactMessage" 
+            placeholder="Tell us what your business needs help with..."
+            required
+        ></textarea>
+
+        <button type="submit" class="primary-btn">
+            Send Message
+        </button>
+
+    </form>
+</div>
         </div>
 
     </div>
