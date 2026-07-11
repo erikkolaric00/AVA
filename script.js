@@ -276,8 +276,35 @@ if(contactForm){
             "Message:\n" + message
         );
 
-        window.location.href =
+        const mailtoLink =
             "mailto:avaerikk@gmail.com?subject=" + subject + "&body=" + body;
+
+        window.open(mailtoLink, "_blank");
+
+        const contactAction = document.querySelector(".contact-action");
+
+        if(contactAction){
+            contactAction.classList.add("message-prepared");
+
+            contactAction.innerHTML = `
+                <div class="success-animation"></div>
+
+                <div class="success-content">
+                    <div class="success-icon">✓</div>
+
+                    <h3>Message Prepared</h3>
+
+                    <p>
+                        Thank you! Your message has been prepared.
+                        Please confirm and send it in your email app.
+                    </p>
+
+                    <button class="primary-btn" onclick="location.reload()">
+                        Send Another Message
+                    </button>
+                </div>
+            `;
+        }
     });
 
 }
