@@ -1224,3 +1224,90 @@ body{
     border:none;
     cursor:pointer;
 }
+/* =========================
+   CONTACT SUCCESS ANIMATION
+========================= */
+
+.contact-action.message-prepared{
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #2563eb,
+        #60a5fa
+    );
+
+    color:white;
+    border:none;
+}
+
+.success-animation{
+    position:absolute;
+    inset:0;
+
+    background:repeating-linear-gradient(
+        120deg,
+        rgba(255,255,255,0.10) 0px,
+        rgba(255,255,255,0.10) 18px,
+        transparent 18px,
+        transparent 36px
+    );
+
+    animation:successStripes 1.8s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes successStripes{
+    from{
+        transform:translateX(-80px);
+    }
+
+    to{
+        transform:translateX(80px);
+    }
+}
+
+.success-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.success-icon{
+    width:54px;
+    height:54px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 18px;
+
+    background:white;
+    color:#2563eb;
+
+    border-radius:50%;
+    font-size:1.8rem;
+    font-weight:800;
+}
+
+.contact-action.message-prepared h3{
+    color:white;
+    font-size:1.5rem;
+    margin-bottom:12px;
+}
+
+.contact-action.message-prepared p{
+    color:white;
+    opacity:0.95;
+    margin-bottom:24px;
+}
+
+.contact-action.message-prepared .primary-btn{
+    background:white;
+    color:#2563eb;
+    border:none;
+    cursor:pointer;
+}
