@@ -421,33 +421,41 @@
         Your message will be answered by a real person from the AVA team.
     </p>
 
-    <form id="contactForm" class="contact-form">
+   <form 
+    id="contactForm" 
+    class="contact-form"
+    action="https://formspree.io/f/mrenzywl"
+    method="POST"
+>
 
-        <input 
-            type="text" 
-            id="contactName" 
-            placeholder="Your name" 
-            required
-        >
+    <input 
+        type="text" 
+        name="name"
+        id="contactName" 
+        placeholder="Your name" 
+        required
+    >
 
-        <input 
-            type="email" 
-            id="contactEmail" 
-            placeholder="Your email" 
-            required
-        >
+    <input 
+        type="email" 
+        name="email"
+        id="contactEmail" 
+        placeholder="Your email" 
+        required
+    >
 
-        <textarea 
-            id="contactMessage" 
-            placeholder="Tell us what your business needs help with..."
-            required
-        ></textarea>
+    <textarea 
+        name="message"
+        id="contactMessage" 
+        placeholder="Tell us what your business needs help with..."
+        required
+    ></textarea>
 
-        <button type="submit" class="primary-btn">
-            Send Message
-        </button>
+    <button type="submit" class="primary-btn">
+        Send Message
+    </button>
 
-    </form>
+</form>
 </div>
         </div>
 
