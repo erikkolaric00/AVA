@@ -254,56 +254,59 @@ animatedElements.forEach(function(element){
     observer.observe(element);
 });
 // =========================
-// CONTACT FORM
+// CONTACT FORM - FORMSPREE
 // =========================
 
 const contactForm = document.getElementById("contactForm");
 
 if(contactForm){
 
-    contactForm.addEventListener("submit", function(e){
+    contactForm.addEventListener("submit", async function(e){
         e.preventDefault();
 
-        const name = document.getElementById("contactName").value;
-        const email = document.getElementById("contactEmail").value;
-        const message = document.getElementById("contactMessage").value;
-
-        const subject = encodeURIComponent("New AVA Website Inquiry");
-
-        const body = encodeURIComponent(
-            "Name: " + name + "\n" +
-            "Email: " + email + "\n\n" +
-            "Message:\n" + message
-        );
-
-        const mailtoLink =
-            "mailto:avaerikk@gmail.com?subject=" + subject + "&body=" + body;
-
-        window.open(mailtoLink, "_blank");
-
         const contactAction = document.querySelector(".contact-action");
+        const formData = new FormData(contactForm);
 
-        if(contactAction){
-            contactAction.classList.add("message-prepared");
+        try{
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
 
-            contactAction.innerHTML = `
-                <div class="success-animation"></div>
+            if(response.ok){
 
-                <div class="success-content">
-                    <div class="success-icon">✓</div>
+                if(contactAction){
+                    contactAction.classList.add("message-prepared");
 
-                    <h3>Message Prepared</h3>
+                    contactAction.innerHTML = `
+                        <div class="success-animation"></div>
 
-                    <p>
-                        Thank you! Your message has been prepared.
-                        Please confirm and send it in your email app.
-                    </p>
+                        <div class="success-content">
+                            <div class="success-icon">✓</div>
 
-                    <button class="primary-btn" onclick="location.reload()">
-                        Send Another Message
-                    </button>
-                </div>
-            `;
+                            <h3>Message Sent</h3>
+
+                            <p>
+                                Thank you! Your message was sent successfully.
+                                We’ll get back to you as soon as possible.
+                            </p>
+
+                            <button class="primary-btn" onclick="location.reload()">
+                                Send Another Message
+                            </button>
+                        </div>
+                    `;
+                }
+
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+
+        } catch(error){
+            alert("Something went wrong. Please check your internet connection.");
         }
     });
 
