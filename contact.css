@@ -1,1 +1,254 @@
+/* =========================
+   CONTACT SECTION - DEMO STYLE
+========================= */
 
+.contact-section{
+    padding:80px 0 120px;
+    background:#f8fbff;
+}
+
+.contact-card{
+    background:linear-gradient(
+        135deg,
+        #eff6ff,
+        #f8fbff
+    );
+
+    border:1px solid #dbeafe;
+    border-radius:24px;
+
+    padding:45px 55px;
+
+    box-shadow:0 14px 35px rgba(15,23,42,0.06);
+}
+
+.contact-label{
+    display:inline-block;
+
+    background:white;
+    color:#2563eb;
+
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:1px;
+
+    padding:8px 14px;
+    border-radius:999px;
+
+    margin-bottom:18px;
+}
+
+.contact-card h2{
+    font-size:2.4rem;
+    color:#0f172a;
+    margin-bottom:14px;
+}
+
+.contact-card p{
+    font-size:1.05rem;
+    color:#475569;
+    line-height:1.7;
+    max-width:760px;
+    margin-bottom:24px;
+}
+
+.contact-points{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px 24px;
+
+    margin:28px 0 35px;
+
+    color:#0f172a;
+    font-size:1rem;
+    font-weight:500;
+}
+
+.contact-action{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:20px;
+
+    padding:28px;
+
+    max-width:520px;
+
+    box-shadow:0 10px 25px rgba(15,23,42,0.06);
+}
+
+.contact-action h3{
+    font-size:1.4rem;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.contact-action p{
+    font-size:0.95rem;
+    color:#64748b;
+    margin-bottom:20px;
+}
+
+.contact-action .primary-btn{
+    min-width:180px;
+    text-align:center;
+}
+
+/* Bigger space before footer */
+.contact-section + footer{
+    margin-top:30px;
+}
+
+/* Phone */
+@media(max-width:700px){
+    .contact-section{
+        padding:60px 0 90px;
+    }
+
+    .contact-card{
+        padding:35px 25px;
+        text-align:center;
+    }
+
+    .contact-card h2{
+        font-size:2rem;
+    }
+
+    .contact-points{
+        grid-template-columns:1fr;
+        text-align:left;
+    }
+
+    .contact-action{
+        max-width:100%;
+        text-align:center;
+    }
+
+    .contact-action .primary-btn{
+        width:100%;
+    }
+}
+/* CONTACT FORM */
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    border:1px solid #dbeafe;
+    border-radius:14px;
+    padding:14px 16px;
+
+    font-family:inherit;
+    font-size:0.95rem;
+
+    outline:none;
+    background:#f8fbff;
+    color:#0f172a;
+}
+
+.contact-form textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.10);
+}
+
+.contact-form button{
+    border:none;
+    cursor:pointer;
+}
+/* =========================
+   CONTACT SUCCESS ANIMATION
+========================= */
+
+.contact-action.message-prepared{
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #1d4ed8,
+        #2563eb,
+        #60a5fa
+    );
+
+    color:white;
+    border:none;
+}
+
+.success-animation{
+    position:absolute;
+    inset:0;
+
+    background:repeating-linear-gradient(
+        120deg,
+        rgba(255,255,255,0.10) 0px,
+        rgba(255,255,255,0.10) 18px,
+        transparent 18px,
+        transparent 36px
+    );
+
+    animation:successStripes 1.8s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes successStripes{
+    from{
+        transform:translateX(-80px);
+    }
+
+    to{
+        transform:translateX(80px);
+    }
+}
+
+.success-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.success-icon{
+    width:54px;
+    height:54px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 18px;
+
+    background:white;
+    color:#2563eb;
+
+    border-radius:50%;
+    font-size:1.8rem;
+    font-weight:800;
+}
+
+.contact-action.message-prepared h3{
+    color:white;
+    font-size:1.5rem;
+    margin-bottom:12px;
+}
+
+.contact-action.message-prepared p{
+    color:white;
+    opacity:0.95;
+    margin-bottom:24px;
+}
+
+.contact-action.message-prepared .primary-btn{
+    background:white;
+    color:#2563eb;
+    border:none;
+    cursor:pointer;
+}
