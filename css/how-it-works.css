@@ -85,11 +85,4 @@
 .questions-box p{
     color:#64748b;
 }
-html,
-body{
-    width:100%;
-    overflow-x:hidden;
-}
-.hidden-demo{
-    display:none;
-   }
+
