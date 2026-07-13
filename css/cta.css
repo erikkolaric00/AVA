@@ -1,0 +1,17 @@
+/* CTA */
+
+.cta-section{
+    text-align:center;
+    background:#2563eb;
+    color:white;
+    padding:100px 40px;
+}
+
+.cta-section h2{
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.cta-section p{
+    margin-bottom:30px;
+}
