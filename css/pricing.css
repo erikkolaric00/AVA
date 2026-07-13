@@ -1,1 +1,76 @@
+/* =========================
+   PRICING BOX FIX
+========================= */
 
+#pricing{
+    background:#f8fbff;
+}
+
+#pricing .container{
+    width:98%;
+    max-width:1600px;
+}
+
+#pricing .pricing-grid{
+    display:grid !important;
+    grid-template-columns:repeat(5, minmax(0, 1fr)) !important;
+    gap:18px !important;
+    align-items:stretch !important;
+}
+
+#pricing .pricing-card{
+    background:white !important;
+    border:1px solid #e2e8f0;
+    box-shadow:0 12px 30px rgba(15,23,42,0.08);
+    border-radius:22px;
+
+    padding:26px 18px !important;
+    min-height:440px;
+
+    display:flex;
+    flex-direction:column;
+    position:relative;
+}
+
+#pricing .pricing-card h3{
+    font-size:1.1rem;
+    margin-bottom:8px;
+}
+
+#pricing .price{
+    font-size:1.7rem;
+    margin:10px 0;
+}
+
+#pricing .price span{
+    font-size:0.75rem;
+    color:#64748b;
+    font-weight:500;
+}
+
+#pricing .plan-description{
+    font-size:0.82rem;
+    line-height:1.4;
+    color:#64748b;
+    margin-bottom:16px;
+    min-height:48px;
+}
+
+#pricing .pricing-card ul{
+    margin-bottom:20px;
+    padding-left:18px;
+}
+
+#pricing .pricing-card li{
+    font-size:0.82rem;
+    margin:7px 0;
+}
+
+/* Push buttons to bottom so all cards align */
+#pricing .primary-btn{
+    margin-top:auto;
+    width:100%;
+    text-align:center;
+    padding:10px 12px;
+    font-size:0.85rem;
+}
