@@ -74,3 +74,49 @@
     padding:10px 12px;
     font-size:0.85rem;
 }
+/* =========================
+   POPULAR PRICING CARD
+========================= */
+
+.pricing-card-popular {
+    position: relative;
+    border: 2px solid #2563eb;
+    padding-top: 68px;
+}
+
+/* Popular badge */
+
+.popular-badge {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+    height: 38px;
+    padding: 0 22px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+
+    z-index: 5;
+}
+
+/* Slightly emphasize the popular card */
+
+.pricing-card-popular:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 42px rgba(37, 99, 235, 0.14);
+}
