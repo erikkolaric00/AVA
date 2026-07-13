@@ -79,37 +79,32 @@
     padding:10px 12px;
     font-size:0.85rem;
 }
-
 /* =========================
    POPULAR PRICING CARD
 ========================= */
 
 #pricing .pricing-card-popular{
-    position:relative;
-
     border:2px solid #2563eb !important;
     padding-top:46px !important;
-
     box-shadow:0 16px 36px rgba(37,99,235,0.12);
 }
 
 #pricing .popular-badge{
     position:absolute;
-
     top:-18px;
     left:50%;
     transform:translateX(-50%);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
 
     min-width:120px;
     height:36px;
     padding:0 20px;
 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
     background:#2563eb;
-    color:#ffffff;
+    color:white;
 
     border-radius:999px;
 
