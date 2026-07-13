@@ -446,3 +446,24 @@
     }
 
 }
+@media(max-width:700px){
+    .contact-section{
+        padding:30px 0 45px;
+    }
+
+    .contact-card{
+        padding:24px 20px;
+    }
+
+    .contact-card h2{
+        font-size:1.7rem;
+    }
+
+    .contact-action{
+        padding:20px;
+    }
+
+    .contact-form textarea{
+        min-height:80px;
+    }
+}
