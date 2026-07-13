@@ -1,0 +1,13 @@
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:60px 20px;
+    background:#0f172a;
+    color:white;
+}
+
+.footer-logo{
+    height:60px;
+    margin-bottom:20px;
+}
