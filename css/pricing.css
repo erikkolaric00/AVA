@@ -30,6 +30,10 @@
     display:flex;
     flex-direction:column;
     position:relative;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 #pricing .pricing-card h3{
@@ -66,7 +70,8 @@
     margin:7px 0;
 }
 
-/* Push buttons to bottom so all cards align */
+/* Push buttons to bottom */
+
 #pricing .primary-btn{
     margin-top:auto;
     width:100%;
@@ -74,49 +79,51 @@
     padding:10px 12px;
     font-size:0.85rem;
 }
+
 /* =========================
    POPULAR PRICING CARD
 ========================= */
 
-.pricing-card-popular {
-    position: relative;
-    border: 2px solid #2563eb;
-    padding-top: 68px;
+#pricing .pricing-card-popular{
+    position:relative;
+
+    border:2px solid #2563eb !important;
+    padding-top:46px !important;
+
+    box-shadow:0 16px 36px rgba(37,99,235,0.12);
 }
 
-/* Popular badge */
+#pricing .popular-badge{
+    position:absolute;
 
-.popular-badge {
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    min-width: 130px;
-    height: 38px;
-    padding: 0 22px;
+    min-width:120px;
+    height:36px;
+    padding:0 20px;
 
-    background: #2563eb;
-    color: #ffffff;
+    background:#2563eb;
+    color:#ffffff;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.04em;
 
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+    box-shadow:0 8px 18px rgba(37,99,235,0.25);
 
-    z-index: 5;
+    white-space:nowrap;
+    z-index:5;
 }
 
-/* Slightly emphasize the popular card */
-
-.pricing-card-popular:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 42px rgba(37, 99, 235, 0.14);
+#pricing .pricing-card-popular:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 42px rgba(37,99,235,0.16);
 }
