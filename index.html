@@ -443,48 +443,94 @@
             </p>
 
             <div class="contact-action">
-    <h3>Contact AVA</h3>
 
-    <p>
-        Your message will be answered by a real person from the AVA team.
-    </p>
+                <!-- Animated lines appear inside this container -->
+                <div
+                    id="contactLinesContainer"
+                    class="contact-lines-container"
+                    aria-hidden="true"
+                ></div>
 
-   <form 
-    id="contactForm" 
-    class="contact-form"
-    action="https://formspree.io/f/mrenzywl"
-    method="POST"
->
+                <div id="contactFormContent" class="contact-form-content">
 
-    <input 
-        type="text" 
-        name="name"
-        id="contactName" 
-        placeholder="Your name" 
-        required
-    >
+                    <h3>Contact AVA</h3>
 
-    <input 
-        type="email" 
-        name="email"
-        id="contactEmail" 
-        placeholder="Your email" 
-        required
-    >
+                    <p>
+                        Your message will be answered by a real person from the AVA team.
+                    </p>
 
-    <textarea 
-        name="message"
-        id="contactMessage" 
-        placeholder="Tell us what your business needs help with..."
-        required
-    ></textarea>
+                    <form
+                        id="contactForm"
+                        class="contact-form"
+                        action="https://formspree.io/f/mrenzywl"
+                        method="POST"
+                    >
 
-    <button type="submit" class="primary-btn">
-        Send Message
-    </button>
+                        <input
+                            type="text"
+                            name="name"
+                            id="contactName"
+                            placeholder="Your name"
+                            autocomplete="name"
+                            required
+                        >
 
-</form>
-</div>
+                        <input
+                            type="email"
+                            name="email"
+                            id="contactEmail"
+                            placeholder="Your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <textarea
+                            name="message"
+                            id="contactMessage"
+                            placeholder="Tell us what your business needs help with..."
+                            required
+                        ></textarea>
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                            id="contactSubmitButton"
+                        >
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- Hidden until the message is sent -->
+                <div
+                    id="contactSuccessMessage"
+                    class="contact-success-message"
+                    aria-live="polite"
+                >
+                    <div class="success-icon" aria-hidden="true">
+                        ✓
+                    </div>
+
+                    <h3>Thanks for Contacting AVA!</h3>
+
+                    <p>
+                        Your message has been received. Our team will review it
+                        and get back to you as soon as possible.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="sendAnotherMessage"
+                    >
+                        Send Another Message
+                    </button>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
