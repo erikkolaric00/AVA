@@ -4,7 +4,7 @@
 
 .hero{
     width:100%;
-    min-height:100vh;
+    min-height:85vh;
 
     background:
         radial-gradient(
@@ -22,14 +22,14 @@
 }
 
 .hero-content{
-    min-height:calc(100vh - 120px);
+    min-height:calc(85vh - 110px);
 
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.05fr 0.95fr;
     align-items:center;
 
-    gap:65px;
-    padding:65px 60px 90px;
+    gap:45px;
+    padding:35px 60px 60px;
 }
 
 .hero-text{
@@ -205,13 +205,14 @@
 ========================= */
 
 .hero-visual{
-    min-height:520px;
-
+    min-height:420px;
     position:relative;
 
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
+
+    padding-top:20px;
 }
 
 .hero-glow{
@@ -236,8 +237,8 @@
 /* Temporary dashboard box */
 
 .dashboard-image-placeholder{
-    width:min(560px, 92%);
-    min-height:350px;
+    width:min(500px, 92%);
+    min-height:300px;
 
     position:relative;
     z-index:2;
