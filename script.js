@@ -259,55 +259,117 @@ animatedElements.forEach(function(element){
 
 const contactForm = document.getElementById("contactForm");
 
-if(contactForm){
+if (contactForm) {
+    const contactAction = document.querySelector(".contact-action");
+    const formContent = document.getElementById("contactFormContent");
+    const successMessage = document.getElementById("contactSuccessMessage");
+    const linesContainer = document.getElementById("contactLinesContainer");
+    const submitButton = document.getElementById("contactSubmitButton");
+    const sendAnotherButton = document.getElementById("sendAnotherMessage");
 
-    contactForm.addEventListener("submit", async function(e){
-        e.preventDefault();
+    contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-        const contactAction = document.querySelector(".contact-action");
+        const originalButtonText = submitButton.textContent;
         const formData = new FormData(contactForm);
 
-        try{
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        try {
             const response = await fetch(contactForm.action, {
                 method: "POST",
                 body: formData,
                 headers: {
-                    "Accept": "application/json"
+                    Accept: "application/json"
                 }
             });
 
-            if(response.ok){
-
-                if(contactAction){
-                    contactAction.classList.add("message-prepared");
-
-                    contactAction.innerHTML = `
-                        <div class="success-animation"></div>
-
-                        <div class="success-content">
-                            <div class="success-icon">✓</div>
-
-                            <h3>Message Sent</h3>
-
-                            <p>
-                                Thank you! Your message was sent successfully.
-                                We’ll get back to you as soon as possible.
-                            </p>
-
-                            <button class="primary-btn" onclick="location.reload()">
-                                Send Another Message
-                            </button>
-                        </div>
-                    `;
-                }
-
-            } else {
-                alert("Something went wrong. Please try again.");
+            if (!response.ok) {
+                throw new Error("Form submission failed.");
             }
 
-        } catch(error){
-            alert("Something went wrong. Please check your internet connection.");
+            startContactSuccessAnimation();
+
+        } catch (error) {
+            console.error("Contact form error:", error);
+
+            alert(
+                "Something went wrong. Please check your internet connection and try again."
+            );
+
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
         }
     });
+
+    if (sendAnotherButton) {
+        sendAnotherButton.addEventListener("click", function () {
+            resetContactForm();
+        });
+    }
+
+    function startContactSuccessAnimation() {
+        contactAction.classList.add("message-prepared");
+
+        formContent.classList.add("is-fading-out");
+
+        createAnimatedLines();
+
+        // Change from form to success message while lines cover the card
+        setTimeout(function () {
+            formContent.classList.add("is-hidden");
+
+            successMessage.classList.add("is-visible");
+
+            contactForm.reset();
+        }, 750);
+
+        // Remove lines after the animation finishes
+        setTimeout(function () {
+            linesContainer.innerHTML = "";
+        }, 2600);
+    }
+
+    function createAnimatedLines() {
+        linesContainer.innerHTML = "";
+
+        const numberOfLines = 15;
+
+        for (let i = 0; i < numberOfLines; i++) {
+            const line = document.createElement("div");
+
+            line.classList.add("contact-blue-line");
+
+            const topPosition = Math.random() * 90 + 5;
+            const lineHeight = Math.random() * 5 + 2;
+            const delay = Math.random() * 0.55;
+            const speed = 1 + Math.random() * 0.45;
+
+            line.style.top = `${topPosition}%`;
+            line.style.height = `${lineHeight}px`;
+            line.style.setProperty("--line-delay", `${delay}s`);
+            line.style.setProperty("--line-speed", `${speed}s`);
+
+            linesContainer.appendChild(line);
+        }
+    }
+
+    function resetContactForm() {
+        linesContainer.innerHTML = "";
+
+        contactAction.classList.remove("message-prepared");
+
+        successMessage.classList.remove("is-visible");
+
+        formContent.classList.remove("is-hidden");
+        formContent.classList.remove("is-fading-out");
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+
+        document.getElementById("contactName").focus();
+    }
+}
 
 }
