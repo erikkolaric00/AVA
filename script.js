@@ -187,7 +187,7 @@ const DEV_PASSWORD = "AVA2026";
 
 document.addEventListener("keydown", function(e){
 
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a"){
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "b"){
 
         const password = prompt("Enter developer password:");
 
