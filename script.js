@@ -1,4 +1,3 @@
-alert("Script loaded!");
 // =========================
 // LANGUAGE TRANSLATIONS
 // =========================
@@ -373,4 +372,3 @@ if (contactForm) {
     }
 }
 
-}
