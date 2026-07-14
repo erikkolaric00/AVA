@@ -176,43 +176,268 @@
 <section id="how-it-works" class="how-it-works">
     <div class="container">
 
-        <h2>How It Works</h2>
+        <!-- Section heading -->
+        <div class="how-heading">
+            <span class="section-label">HOW IT WORKS</span>
 
+            <h2>
+                How AVA Helps<br>
+                Your Business
+            </h2>
+
+            <p>
+                Connect your business, teach AVA about your services,
+                and let it handle customer calls, emails, and bookings
+                around the clock.
+            </p>
+
+            <span class="heading-line"></span>
+        </div>
+
+        <!-- Step cards -->
         <div class="steps-grid">
 
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-link"></i></div>
-                <h3>Connect</h3>
-                <p>Add the key details AVA needs to support your customers.</p>
-            </div>
+            <button
+                class="step-card"
+                type="button"
+                data-step="0"
+                aria-label="Learn more about connecting your business"
+            >
+                <span class="step-more" aria-hidden="true">+</span>
 
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-brain"></i></div>
-                <h3>Learn</h3>
-                <p>AVA learns your business, services and customer needs.</p>
-            </div>
+                <span class="step-icon">
+                    <i class="fas fa-link"></i>
+                </span>
 
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-comments"></i></div>
-                <h3>Assist</h3>
-                <p>Answer questions, manage bookings and support customers.</p>
-            </div>
+                <span class="step-title">Connect</span>
 
-            <div class="step-card">
-                <div class="step-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Grow</h3>
-                <p>Discover trends, opportunities and business insights.</p>
-            </div>
+                <span class="step-description">
+                    Add the key details AVA needs to support your customers.
+                </span>
+            </button>
+
+            <button
+                class="step-card"
+                type="button"
+                data-step="1"
+                aria-label="Learn more about how AVA learns"
+            >
+                <span class="step-more" aria-hidden="true">+</span>
+
+                <span class="step-icon">
+                    <i class="fas fa-brain"></i>
+                </span>
+
+                <span class="step-title">Learn</span>
+
+                <span class="step-description">
+                    AVA learns your business, services and customer needs.
+                </span>
+            </button>
+
+            <button
+                class="step-card"
+                type="button"
+                data-step="2"
+                aria-label="Learn more about how AVA assists customers"
+            >
+                <span class="step-more" aria-hidden="true">+</span>
+
+                <span class="step-icon">
+                    <i class="fas fa-comments"></i>
+                </span>
+
+                <span class="step-title">Assist</span>
+
+                <span class="step-description">
+                    Answer questions, manage bookings and support customers.
+                </span>
+            </button>
+
+            <button
+                class="step-card"
+                type="button"
+                data-step="3"
+                aria-label="Learn more about AVA business insights"
+            >
+                <span class="step-more" aria-hidden="true">+</span>
+
+                <span class="step-icon">
+                    <i class="fas fa-chart-line"></i>
+                </span>
+
+                <span class="step-title">Grow</span>
+
+                <span class="step-description">
+                    Discover trends, opportunities and business insights.
+                </span>
+            </button>
 
         </div>
 
-        <div class="questions-box">
-            <h3>Still have questions?</h3>
-            <p>Contact us and we'll show you how AVA can help your business.</p>
-        </div>
+        <!-- Questions link -->
+        <a href="#contact" class="how-questions-link">
+            <i class="far fa-circle-question"></i>
+
+            <span>
+                Still have questions?
+                <strong>Contact us</strong>
+            </span>
+
+            <i class="fas fa-arrow-right questions-arrow"></i>
+        </a>
 
     </div>
 </section>
+
+
+<!-- HOW IT WORKS MODAL -->
+<div
+    class="how-modal-overlay"
+    id="howModalOverlay"
+    aria-hidden="true"
+>
+    <div
+        class="how-modal"
+        id="howModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="howModalTitle"
+    >
+
+        <button
+            class="how-modal-close"
+            id="howModalClose"
+            type="button"
+            aria-label="Close details"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
+        <div class="how-modal-content">
+
+            <!-- Left side -->
+            <div class="how-modal-info">
+
+                <div class="how-modal-heading-row">
+                    <div class="how-modal-icon" id="howModalIcon">
+                        <i class="fas fa-link"></i>
+                    </div>
+
+                    <div>
+                        <span class="how-step-label" id="howStepLabel">
+                            STEP 1
+                        </span>
+
+                        <h3 id="howModalTitle">
+                            Connect Your Business
+                        </h3>
+                    </div>
+                </div>
+
+                <p class="how-modal-intro" id="howModalIntro">
+                    Tell AVA about your business in a few simple steps.
+                    The more details you provide, the better AVA can help
+                    your customers.
+                </p>
+
+                <div
+                    class="how-modal-list"
+                    id="howModalList"
+                ></div>
+
+                <div class="how-highlight-box">
+                    <div class="highlight-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div>
+                        <strong id="howHighlightTitle">
+                            Ready in under 10 minutes
+                        </strong>
+
+                        <p id="howHighlightText">
+                            Once connected, AVA can begin supporting
+                            your customers.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right side -->
+            <div class="how-modal-visual">
+
+                <div class="visual-window">
+
+                    <div class="visual-window-header">
+                        <div class="visual-brand">
+                            AVA
+                        </div>
+
+                        <span id="visualWindowTitle">
+                            Connection overview
+                        </span>
+
+                        <div class="visual-window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="visual-placeholder"
+                        id="howVisualPlaceholder"
+                    >
+                        <!-- Generated with JavaScript -->
+                    </div>
+
+                </div>
+
+                <p class="visual-note">
+                    Your real dashboard preview can be added here later.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Modal bottom navigation -->
+        <div class="how-modal-footer">
+
+            <div
+                class="how-progress"
+                id="howProgress"
+                aria-label="How AVA works progress"
+            ></div>
+
+            <div class="how-modal-navigation">
+
+                <button
+                    type="button"
+                    class="modal-nav-btn modal-previous"
+                    id="howPrevious"
+                >
+                    <i class="fas fa-arrow-left"></i>
+                    Previous
+                </button>
+
+                <button
+                    type="button"
+                    class="modal-nav-btn modal-next"
+                    id="howNext"
+                >
+                    Next: Learn
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
 
 <!-- WHY AVA -->
 <section id="why-ava" class="section">
