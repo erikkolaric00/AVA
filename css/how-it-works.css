@@ -1008,3 +1008,18 @@ body.modal-open {
         font-size: 14px;
     }
 }
+@media (max-width: 520px) {
+    .section-label {
+        min-width: 0;
+        width: 100%;
+        min-height: 80px;
+        padding: 18px 25px;
+
+        font-size: 25px;
+        border-radius: 22px;
+    }
+
+    .how-heading {
+        margin-bottom: 40px;
+    }
+}
