@@ -1,62 +1,345 @@
-/* DEVELOPMENT SCREEN */
+/* =========================
+   DEVELOPMENT SCREEN
+========================= */
 
-#dev-screen{
-    position:fixed;
-    inset:0;
-    width:100%;
-    min-height:100vh;
-    min-height:100dvh;
+#dev-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
 
-    background:linear-gradient(
+    min-height: 100vh;
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(37, 99, 235, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(96, 165, 250, 0.13),
+            transparent 36%
+        ),
+        #f8fafc;
+
+    overflow: hidden;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.45s ease,
+        visibility 0.45s ease;
+}
+
+#dev-screen.is-unlocked {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* Background decorations */
+
+.dev-background-shape {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.08);
+
+    filter: blur(2px);
+
+    pointer-events: none;
+}
+
+.dev-shape-one {
+    width: 360px;
+    height: 360px;
+
+    top: -150px;
+    left: -110px;
+}
+
+.dev-shape-two {
+    width: 430px;
+    height: 430px;
+
+    right: -170px;
+    bottom: -190px;
+}
+
+
+/* Main card */
+
+.dev-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(680px, 100%);
+    padding: 55px 55px 38px;
+
+    border: 1px solid rgba(191, 219, 254, 0.9);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 35px 90px rgba(15, 23, 42, 0.16),
+        0 0 0 1px rgba(255, 255, 255, 0.7);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    text-align: center;
+
+    animation: devCardEnter 0.7s
+        cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+/* AVA logo */
+
+.dev-logo {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
         135deg,
-        #dbeafe,
-        #eff6ff
+        #2563eb,
+        #60a5fa
     );
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    color: #ffffff;
 
-    text-align:center;
-    z-index:999999;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
 
-    padding:24px;
-    overflow:hidden;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.22);
 }
 
-.dev-screen-content{
-    width:100%;
-    max-width:700px;
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+/* Development badge */
+
+.dev-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 8px 15px;
+    margin-bottom: 23px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
 }
 
-.dev-image{
-    width:clamp(130px, 22vw, 220px);
-    height:auto;
-    margin-bottom:22px;
+.dev-status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.11);
+
+    animation: devPulse 1.8s infinite;
 }
 
-.dev-screen-content h1{
-    font-size:clamp(2rem, 6vw, 4rem);
-    line-height:1.05;
-    color:#0f172a;
-    margin-bottom:18px;
-    font-weight:800;
-    white-space:nowrap;
+
+/* Text */
+
+.dev-card h1 {
+    margin: 0 0 20px;
+
+    color: #0f172a;
+
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
 }
 
-.dev-screen-content p{
-    font-size:clamp(1rem, 2.5vw, 1.35rem);
-    color:#475569;
-    margin-bottom:12px;
+.dev-card > p {
+    max-width: 560px;
+    margin: 0 auto;
+
+    color: #64748b;
+
+    font-size: 17px;
+    line-height: 1.75;
 }
 
-.dev-screen-content h3{
-    font-size:clamp(1.1rem, 3vw, 1.6rem);
-    color:#0f172a;
-    margin-top:20px;
+
+/* Progress */
+
+.dev-progress {
+    margin-top: 35px;
+    padding: 20px;
+
+    border: 1px solid #dbeafe;
+    border-radius: 17px;
+
+    background: #f8fbff;
+
+    text-align: left;
+}
+
+.dev-progress-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 13px;
+
+    font-size: 12px;
+}
+
+.dev-progress-heading span {
+    color: #64748b;
+}
+
+.dev-progress-heading strong {
+    color: #2563eb;
+}
+
+.dev-progress-track {
+    width: 100%;
+    height: 8px;
+
+    border-radius: 999px;
+
+    background: #dbeafe;
+
+    overflow: hidden;
+}
+
+.dev-progress-track span {
+    display: block;
+
+    width: 68%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    animation: devProgress 1.1s ease;
+}
+
+
+/* Bottom text */
+
+.dev-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-top: 25px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* Animations */
+
+@keyframes devCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes devPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+    }
+}
+
+@keyframes devProgress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 68%;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    #dev-screen {
+        padding: 17px;
+    }
+
+    .dev-card {
+        padding: 38px 23px 28px;
+
+        border-radius: 24px;
+    }
+
+    .dev-logo {
+        width: 68px;
+        height: 68px;
+
+        border-radius: 19px;
+
+        font-size: 20px;
+    }
+
+    .dev-card h1 {
+        font-size: 36px;
+    }
+
+    .dev-card > p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .dev-footer {
+        flex-direction: column;
+        gap: 6px;
+    }
 }
