@@ -54,32 +54,62 @@ function changeLanguage(lang){
 // FAQ ACCORDION
 // =========================
 
-const faqQuestions = document.querySelectorAll(".faq-question");
+const faqItems = document.querySelectorAll(".faq-item");
 
-faqQuestions.forEach(question => {
+function closeFaqItem(item) {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
 
-    question.addEventListener("click", () => {
+    item.classList.remove("active");
+    question.setAttribute("aria-expanded", "false");
+    answer.style.maxHeight = null;
+}
 
-        const answer = question.nextElementSibling;
+function openFaqItem(item) {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
 
-        document.querySelectorAll(".faq-answer").forEach(item => {
+    item.classList.add("active");
+    question.setAttribute("aria-expanded", "true");
+    answer.style.maxHeight = answer.scrollHeight + "px";
+}
 
-            if (item !== answer) {
-                item.style.display = "none";
-            }
+faqItems.forEach(function (item) {
+    const question = item.querySelector(".faq-question");
 
+    question.addEventListener("click", function () {
+        const wasOpen = item.classList.contains("active");
+
+        faqItems.forEach(function (otherItem) {
+            closeFaqItem(otherItem);
         });
 
-        if (answer.style.display === "block") {
-            answer.style.display = "none";
-        } else {
-            answer.style.display = "block";
+        if (!wasOpen) {
+            openFaqItem(item);
         }
-
     });
-
 });
 
+/* Open the first question automatically */
+
+if (faqItems.length > 0) {
+    openFaqItem(faqItems[0]);
+}
+
+
+/* Recalculate the open answer after screen resizing */
+
+window.addEventListener("resize", function () {
+    const activeItem = document.querySelector(".faq-item.active");
+
+    if (!activeItem) return;
+
+    const activeAnswer =
+        activeItem.querySelector(".faq-answer");
+
+    activeAnswer.style.maxHeight =
+        activeAnswer.scrollHeight + "px";
+});
 
 // =========================
 // LANGUAGE DROPDOWN
