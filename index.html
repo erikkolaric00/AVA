@@ -426,55 +426,503 @@
     </div>
 </div>
 
-<!-- WHY AVA -->
-<section id="why-ava" class="section">
+<!-- =========================
+     WHY BUSINESSES CHOOSE AVA
+========================= -->
+<section id="why-ava" class="why-ava">
     <div class="container">
 
-        <h2>Why Businesses Choose AVA</h2>
+        <div class="why-heading">
+            <span class="why-section-label">
+                WHY BUSINESSES CHOOSE AVA
+            </span>
+        </div>
 
-        <div class="benefits-grid">
+        <div class="why-grid">
 
-            <div class="benefit-card">
-                <div class="step-icon">⏰</div>
-                <h3>Save Time</h3>
-                <p>Reduce repetitive administrative work.</p>
-            </div>
+            <button
+                class="why-benefit-card"
+                type="button"
+                data-benefit="0"
+                aria-label="Learn more about how AVA saves time"
+            >
+                <span class="why-card-more">+</span>
 
-            <div class="benefit-card">
-                <div class="step-icon">🌍</div>
-                <h3>24/7 Availability</h3>
-                <p>Never miss a customer inquiry.</p>
-            </div>
+                <span class="why-card-icon">
+                    <i class="fas fa-clock"></i>
+                </span>
 
-            <div class="benefit-card">
-                <div class="step-icon">📅</div>
-                <h3>Bookings</h3>
-                <p>Manage reservations automatically.</p>
-            </div>
+                <span class="why-card-title">
+                    Saves Time
+                </span>
 
-            <div class="benefit-card">
-                <div class="step-icon">⭐</div>
-                <h3>Customer Experience</h3>
-                <p>Fast and reliable responses.</p>
-            </div>
+                <span class="why-card-description">
+                    Automates repetitive work so your team can focus on what matters.
+                </span>
+            </button>
 
-            <div class="benefit-card">
-                <div class="step-icon">📈</div>
-                <h3>Insights</h3>
-                <p>Discover trends and opportunities.</p>
-            </div>
 
-            <div class="benefit-card">
-                <div class="step-icon">🌐</div>
-                <h3>Languages</h3>
-                <p>Support customers in multiple languages.</p>
-            </div>
+            <button
+                class="why-benefit-card"
+                type="button"
+                data-benefit="1"
+                aria-label="Learn more about AVA language support"
+            >
+                <span class="why-card-more">+</span>
+
+                <span class="why-card-icon">
+                    <i class="fas fa-globe"></i>
+                </span>
+
+                <span class="why-card-title">
+                    Multi-Language Support
+                </span>
+
+                <span class="why-card-description">
+                    Communicate with customers in their preferred language.
+                </span>
+            </button>
+
+
+            <button
+                class="why-benefit-card"
+                type="button"
+                data-benefit="2"
+                aria-label="Learn more about AVA availability"
+            >
+                <span class="why-card-more">+</span>
+
+                <span class="why-card-icon">
+                    <i class="fas fa-headset"></i>
+                </span>
+
+                <span class="why-card-title">
+                    Available 24/7
+                </span>
+
+                <span class="why-card-description">
+                    AVA remains available when your staff are busy or unavailable.
+                </span>
+            </button>
+
+
+            <button
+                class="why-benefit-card"
+                type="button"
+                data-benefit="3"
+                aria-label="Learn more about AVA insights"
+            >
+                <span class="why-card-more">+</span>
+
+                <span class="why-card-icon">
+                    <i class="fas fa-chart-column"></i>
+                </span>
+
+                <span class="why-card-title">
+                    Insights & Reports
+                </span>
+
+                <span class="why-card-description">
+                    Understand your customers and discover new opportunities.
+                </span>
+            </button>
+
+
+            <button
+                class="why-benefit-card"
+                type="button"
+                data-benefit="4"
+                aria-label="Learn more about smart bookings"
+            >
+                <span class="why-card-more">+</span>
+
+                <span class="why-card-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </span>
+
+                <span class="why-card-title">
+                    Smart Bookings
+                </span>
+
+                <span class="why-card-description">
+                    Manage appointments and reduce double bookings automatically.
+                </span>
+            </button>
+
+
+            <button
+                class="why-benefit-card"
+                type="button"
+                data-benefit="5"
+                aria-label="Learn more about AVA security"
+            >
+                <span class="why-card-more">+</span>
+
+                <span class="why-card-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </span>
+
+                <span class="why-card-title">
+                    Secure & Reliable
+                </span>
+
+                <span class="why-card-description">
+                    Protect important business and customer information.
+                </span>
+            </button>
 
         </div>
 
     </div>
 </section>
 
+
+<!-- =========================
+     WHY AVA MODAL
+========================= -->
+<div
+    class="why-modal-overlay"
+    id="whyModalOverlay"
+    aria-hidden="true"
+>
+    <div
+        class="why-modal"
+        id="whyModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="whyModalTitle"
+    >
+
+        <button
+            class="why-modal-close"
+            id="whyModalClose"
+            type="button"
+            aria-label="Close benefit details"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
+
+        <div class="why-modal-content">
+
+            <!-- LEFT SIDE -->
+            <div class="why-modal-info">
+
+                <div class="why-modal-heading-row">
+
+                    <div
+                        class="why-modal-icon"
+                        id="whyModalIcon"
+                    >
+                        <i class="fas fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span
+                            class="why-benefit-label"
+                            id="whyBenefitLabel"
+                        >
+                            BENEFIT 1
+                        </span>
+
+                        <h3 id="whyModalTitle">
+                            Saves Time
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="why-modal-intro"
+                    id="whyModalIntro"
+                ></p>
+
+
+                <div
+                    class="why-modal-list"
+                    id="whyModalList"
+                ></div>
+
+
+                <!-- Only visible for language benefit -->
+                <button
+                    class="supported-languages-button"
+                    id="supportedLanguagesButton"
+                    type="button"
+                    hidden
+                >
+                    <i class="fas fa-globe"></i>
+
+                    <span>
+                        See supported AI languages
+                    </span>
+
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+
+                <div class="why-highlight-box">
+
+                    <div class="why-highlight-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div>
+                        <strong id="whyHighlightTitle"></strong>
+                        <p id="whyHighlightText"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="why-modal-visual">
+
+                <div class="why-visual-window">
+
+                    <div class="why-visual-header">
+
+                        <strong>AVA</strong>
+
+                        <span id="whyVisualTitle">
+                            Benefit overview
+                        </span>
+
+                        <div class="why-visual-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="why-visual-content"
+                        id="whyVisualContent"
+                    ></div>
+
+                </div>
+
+                <p class="why-visual-note">
+                    Your real AVA dashboard image can be added here later.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MODAL NAVIGATION -->
+        <div class="why-modal-footer">
+
+            <div
+                class="why-progress"
+                id="whyProgress"
+            ></div>
+
+            <div class="why-modal-navigation">
+
+                <button
+                    class="why-navigation-button why-previous"
+                    id="whyPrevious"
+                    type="button"
+                >
+                    <i class="fas fa-arrow-left"></i>
+                    Previous
+                </button>
+
+                <button
+                    class="why-navigation-button why-next"
+                    id="whyNext"
+                    type="button"
+                >
+                    Next
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Darkens the centered modal when drawer opens -->
+    <button
+        class="language-drawer-scrim"
+        id="languageDrawerScrim"
+        type="button"
+        aria-label="Close supported languages"
+    ></button>
+
+
+    <!-- =========================
+         LANGUAGE SIDE DRAWER
+    ========================= -->
+    <aside
+        class="language-drawer"
+        id="languageDrawer"
+        aria-hidden="true"
+        aria-labelledby="languageDrawerTitle"
+    >
+
+        <button
+            class="language-drawer-close"
+            id="languageDrawerClose"
+            type="button"
+            aria-label="Close supported languages"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
+
+        <div class="language-drawer-heading">
+
+            <div class="language-drawer-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+
+            <div>
+                <h3 id="languageDrawerTitle">
+                    Supported Languages
+                </h3>
+
+                <p>
+                    Language availability depends on the communication channel.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- EMAIL AND CHAT -->
+        <div class="language-group">
+
+            <div class="language-group-heading">
+
+                <div>
+                    <h4>
+                        <i class="fas fa-comments"></i>
+                        Email & Chat
+                    </h4>
+
+                    <p>
+                        Broad multilingual text support.
+                    </p>
+                </div>
+
+                <span class="language-count">
+                    Many languages
+                </span>
+
+            </div>
+
+
+            <div class="language-chip-grid">
+
+                <span class="language-chip">🇬🇧 English</span>
+                <span class="language-chip">🇩🇪 German</span>
+                <span class="language-chip">🇸🇮 Slovenian</span>
+                <span class="language-chip">🇭🇷 Croatian</span>
+                <span class="language-chip">🇪🇸 Spanish</span>
+                <span class="language-chip">🇵🇹 Portuguese</span>
+                <span class="language-chip">🇨🇳 Chinese</span>
+                <span class="language-chip">🇫🇷 French</span>
+                <span class="language-chip">🇮🇹 Italian</span>
+                <span class="language-chip">🇳🇱 Dutch</span>
+                <span class="language-chip">🇵🇱 Polish</span>
+                <span class="language-chip">🇹🇷 Turkish</span>
+                <span class="language-chip">🇯🇵 Japanese</span>
+                <span class="language-chip">🇰🇷 Korean</span>
+                <span class="language-chip">🇸🇦 Arabic</span>
+                <span class="language-chip">🇮🇳 Hindi</span>
+                <span class="language-chip">🇸🇪 Swedish</span>
+                <span class="language-chip">🇬🇷 Greek</span>
+                <span class="language-chip">🇺🇦 Ukrainian</span>
+                <span class="language-chip">🇷🇴 Romanian</span>
+                <span class="language-chip">🇨🇿 Czech</span>
+                <span class="language-chip">🇸🇰 Slovak</span>
+                <span class="language-chip">🇷🇸 Serbian</span>
+                <span class="language-chip">🌍 And more</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CALL LANGUAGES -->
+        <div class="language-group call-language-group">
+
+            <div class="language-group-heading">
+
+                <div>
+                    <h4>
+                        <i class="fas fa-phone"></i>
+                        Calls
+                    </h4>
+
+                    <p>
+                        Voice calls are available in these languages.
+                    </p>
+                </div>
+
+                <span class="language-count">
+                    7 languages
+                </span>
+
+            </div>
+
+
+            <div class="language-chip-grid call-language-grid">
+
+                <span class="language-chip call-language">
+                    🇬🇧 English
+                </span>
+
+                <span class="language-chip call-language">
+                    🇩🇪 German
+                </span>
+
+                <span class="language-chip call-language">
+                    🇸🇮 Slovenian
+                </span>
+
+                <span class="language-chip call-language">
+                    🇭🇷 Croatian
+                </span>
+
+                <span class="language-chip call-language">
+                    🇪🇸 Spanish
+                </span>
+
+                <span class="language-chip call-language">
+                    🇵🇹 Portuguese
+                </span>
+
+                <span class="language-chip call-language">
+                    🇨🇳 Chinese
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="language-note">
+            <i class="fas fa-circle-info"></i>
+
+            <p>
+                Language availability can be expanded as AVA develops
+                and new voice models become available.
+            </p>
+        </div>
+
+    </aside>
+
+</div>
 <!-- DEMO -->
 <section id="demo" class="demo-section">
     <div class="container">
