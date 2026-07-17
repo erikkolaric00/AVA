@@ -14,7 +14,7 @@
 ========================= */
 
 .how-heading {
-    margin: 0 auto 60px;
+    margin: 0 auto 45px;
     text-align: center;
 }
 
@@ -23,8 +23,8 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 360px;
-    min-height: 100px;
+    min-width: 280px;
+    min-height: 75px;
     padding: 20px 45px;
 
     border: 2px solid #bfdbfe;
