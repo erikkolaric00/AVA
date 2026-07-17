@@ -1,4 +1,31 @@
 /* =========================
+   PRICING HEADING
+========================= */
+
+.pricing-heading {
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.pricing-section-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 70px;
+    padding: 14px 32px;
+
+    border: 2px solid #bfdbfe;
+    border-radius: 22px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+/* =========================
    PRICING BOX FIX
 ========================= */
 
@@ -121,4 +148,18 @@
 #pricing .pricing-card-popular:hover{
     transform:translateY(-6px);
     box-shadow:0 20px 42px rgba(37,99,235,0.16);
+}
+@media (max-width: 520px) {
+    .pricing-heading {
+        margin-bottom: 38px;
+    }
+
+    .pricing-section-label {
+        width: 100%;
+        min-height: 60px;
+        padding: 12px 20px;
+
+        font-size: 16px;
+        letter-spacing: 0.03em;
+    }
 }
