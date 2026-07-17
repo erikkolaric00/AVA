@@ -1074,3 +1074,982 @@ if (
         }
     );
 }
+// =========================
+// WHY AVA MODAL
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const benefitCards =
+        document.querySelectorAll(".why-benefit-card");
+
+    const modalOverlay =
+        document.getElementById("whyModalOverlay");
+
+    const modal =
+        document.getElementById("whyModal");
+
+    const modalClose =
+        document.getElementById("whyModalClose");
+
+    const benefitLabel =
+        document.getElementById("whyBenefitLabel");
+
+    const modalTitle =
+        document.getElementById("whyModalTitle");
+
+    const modalIcon =
+        document.getElementById("whyModalIcon");
+
+    const modalIntro =
+        document.getElementById("whyModalIntro");
+
+    const modalList =
+        document.getElementById("whyModalList");
+
+    const highlightTitle =
+        document.getElementById("whyHighlightTitle");
+
+    const highlightText =
+        document.getElementById("whyHighlightText");
+
+    const visualTitle =
+        document.getElementById("whyVisualTitle");
+
+    const visualContent =
+        document.getElementById("whyVisualContent");
+
+    const progressContainer =
+        document.getElementById("whyProgress");
+
+    const previousButton =
+        document.getElementById("whyPrevious");
+
+    const nextButton =
+        document.getElementById("whyNext");
+
+    const modalContent =
+        document.querySelector(".why-modal-content");
+
+    const supportedLanguagesButton =
+        document.getElementById(
+            "supportedLanguagesButton"
+        );
+
+    const languageDrawer =
+        document.getElementById("languageDrawer");
+
+    const languageDrawerClose =
+        document.getElementById(
+            "languageDrawerClose"
+        );
+
+    const languageDrawerScrim =
+        document.getElementById(
+            "languageDrawerScrim"
+        );
+
+
+    let currentBenefit = 0;
+    let lastOpenedCard = null;
+
+
+    const benefits = [
+
+        {
+            label: "BENEFIT 1",
+            title: "Saves Time",
+            icon: "fas fa-clock",
+
+            intro:
+                "AVA handles repetitive administrative work so your team " +
+                "can spend more time serving customers and growing the business.",
+
+            items: [
+                {
+                    title: "Automate repeated customer questions",
+                    text:
+                        "AVA answers common questions about services, " +
+                        "prices, availability and opening hours."
+                },
+                {
+                    title: "Reduce interruptions",
+                    text:
+                        "Your employees can focus on customers instead " +
+                        "of constantly stopping to answer calls and emails."
+                },
+                {
+                    title: "Handle bookings automatically",
+                    text:
+                        "AVA can collect booking details and organize " +
+                        "appointments using your availability."
+                },
+                {
+                    title: "Keep everything organized",
+                    text:
+                        "Customer requests, messages and bookings remain " +
+                        "available in one connected system."
+                }
+            ],
+
+            highlightTitle:
+                "More time for important work",
+
+            highlightText:
+                "AVA takes care of repetitive tasks while your team " +
+                "focuses on customers and business growth.",
+
+            visualTitle:
+                "Time-saving automation",
+
+            visualMainTitle:
+                "Your daily work, simplified",
+
+            visualMainText:
+                "Calls, emails, questions and bookings can be managed " +
+                "without repeatedly interrupting your staff.",
+
+            visualCards: [
+                {
+                    icon: "fas fa-phone",
+                    text: "Calls handled"
+                },
+                {
+                    icon: "fas fa-envelope",
+                    text: "Emails answered"
+                },
+                {
+                    icon: "fas fa-calendar-check",
+                    text: "Bookings managed"
+                },
+                {
+                    icon: "fas fa-hourglass-half",
+                    text: "Time saved"
+                }
+            ]
+        },
+
+
+        {
+            label: "BENEFIT 2",
+            title: "Multi-Language Support",
+            icon: "fas fa-globe",
+
+            intro:
+                "AVA helps businesses communicate with customers in " +
+                "the language they understand and feel most comfortable using.",
+
+            items: [
+                {
+                    title: "Reach more customers",
+                    text:
+                        "Allow customers to communicate without language " +
+                        "barriers or unnecessary misunderstandings."
+                },
+                {
+                    title: "Improve customer satisfaction",
+                    text:
+                        "Customers receive clearer and more natural " +
+                        "answers in their preferred language."
+                },
+                {
+                    title: "Support international customers",
+                    text:
+                        "AVA can help businesses serve visitors and " +
+                        "customers from different countries."
+                },
+                {
+                    title: "Use different languages by channel",
+                    text:
+                        "Text communication can offer broader language " +
+                        "coverage than voice calls."
+                }
+            ],
+
+            highlightTitle:
+                "Communicate more naturally",
+
+            highlightText:
+                "Give more customers the confidence to contact your " +
+                "business in a language they understand.",
+
+            visualTitle:
+                "Language support",
+
+            visualMainTitle:
+                "Connect with more customers",
+
+            visualMainText:
+                "Use multilingual email, chat and voice support to " +
+                "create a more accessible customer experience.",
+
+            visualCards: [
+                {
+                    icon: "fas fa-comments",
+                    text: "Multilingual chat"
+                },
+                {
+                    icon: "fas fa-envelope",
+                    text: "Multilingual email"
+                },
+                {
+                    icon: "fas fa-phone",
+                    text: "Voice languages"
+                },
+                {
+                    icon: "fas fa-language",
+                    text: "Natural responses"
+                }
+            ],
+
+            showLanguages: true
+        },
+
+
+        {
+            label: "BENEFIT 3",
+            title: "Available 24/7",
+            icon: "fas fa-headset",
+
+            intro:
+                "AVA remains available outside normal working hours, " +
+                "during busy periods and whenever your staff cannot respond.",
+
+            items: [
+                {
+                    title: "Support customers after closing",
+                    text:
+                        "Customers can still receive information and " +
+                        "request bookings outside your opening hours."
+                },
+                {
+                    title: "Handle busy periods",
+                    text:
+                        "AVA can respond when your employees are already " +
+                        "helping other customers."
+                },
+                {
+                    title: "Reduce missed opportunities",
+                    text:
+                        "Fewer customer calls and messages are left " +
+                        "unanswered."
+                },
+                {
+                    title: "Provide consistent availability",
+                    text:
+                        "Customers know they can contact your business " +
+                        "when they need help."
+                }
+            ],
+
+            highlightTitle:
+                "Your business remains available",
+
+            highlightText:
+                "AVA helps customers even when your staff are busy, " +
+                "unavailable or outside normal working hours.",
+
+            visualTitle:
+                "Always available",
+
+            visualMainTitle:
+                "Customer support around the clock",
+
+            visualMainText:
+                "AVA can continue responding to inquiries and collecting " +
+                "booking requests throughout the day.",
+
+            visualCards: [
+                {
+                    icon: "fas fa-moon",
+                    text: "After-hours support"
+                },
+                {
+                    icon: "fas fa-bolt",
+                    text: "Fast responses"
+                },
+                {
+                    icon: "fas fa-phone-volume",
+                    text: "Fewer missed calls"
+                },
+                {
+                    icon: "fas fa-calendar-day",
+                    text: "Daily availability"
+                }
+            ]
+        },
+
+
+        {
+            label: "BENEFIT 4",
+            title: "Insights & Reports",
+            icon: "fas fa-chart-column",
+
+            intro:
+                "AVA turns customer conversations and booking activity " +
+                "into useful information that can support better decisions.",
+
+            items: [
+                {
+                    title: "Understand customer demand",
+                    text:
+                        "See which products, services and appointment " +
+                        "times customers request most often."
+                },
+                {
+                    title: "Discover new opportunities",
+                    text:
+                        "Identify requests for services your business " +
+                        "does not currently offer."
+                },
+                {
+                    title: "Review communication trends",
+                    text:
+                        "Understand how frequently customers contact your " +
+                        "business and what they need."
+                },
+                {
+                    title: "Recognize loyal customers",
+                    text:
+                        "See which customers return most often and create " +
+                        "opportunities to reward their loyalty."
+                }
+            ],
+
+            highlightTitle:
+                "Turn conversations into useful information",
+
+            highlightText:
+                "Use real customer activity to improve your services " +
+                "and identify new growth opportunities.",
+
+            visualTitle:
+                "Business analytics",
+
+            visualMainTitle:
+                "Understand what customers want",
+
+            visualMainText:
+                "Track customer interests, booking activity and " +
+                "communication trends from one dashboard.",
+
+            visualCards: [
+                {
+                    icon: "fas fa-chart-line",
+                    text: "Booking trends"
+                },
+                {
+                    icon: "fas fa-users",
+                    text: "Loyal customers"
+                },
+                {
+                    icon: "fas fa-lightbulb",
+                    text: "Opportunities"
+                },
+                {
+                    icon: "fas fa-file-lines",
+                    text: "Monthly reports"
+                }
+            ]
+        },
+
+
+        {
+            label: "BENEFIT 5",
+            title: "Smart Bookings",
+            icon: "fas fa-calendar-check",
+
+            intro:
+                "AVA helps organize appointments using your services, " +
+                "availability, booking rules and customer information.",
+
+            items: [
+                {
+                    title: "Reduce double bookings",
+                    text:
+                        "AVA checks availability before confirming a new " +
+                        "appointment."
+                },
+                {
+                    title: "Apply your booking rules",
+                    text:
+                        "Use service duration, working hours and required " +
+                        "breaks when organizing appointments."
+                },
+                {
+                    title: "Allow manual staff bookings",
+                    text:
+                        "Employees can still add or update appointments " +
+                        "when necessary."
+                },
+                {
+                    title: "Keep customers informed",
+                    text:
+                        "Booking details and changes can be communicated " +
+                        "clearly to customers."
+                }
+            ],
+
+            highlightTitle:
+                "A more organized booking process",
+
+            highlightText:
+                "Keep appointments accurate, visible and easier for " +
+                "both customers and employees to manage.",
+
+            visualTitle:
+                "Booking management",
+
+            visualMainTitle:
+                "Appointments in one place",
+
+            visualMainText:
+                "AVA uses your calendar and booking rules to organize " +
+                "customer appointments more accurately.",
+
+            visualCards: [
+                {
+                    icon: "fas fa-calendar-plus",
+                    text: "New bookings"
+                },
+                {
+                    icon: "fas fa-clock",
+                    text: "Availability checks"
+                },
+                {
+                    icon: "fas fa-ban",
+                    text: "Conflict prevention"
+                },
+                {
+                    icon: "fas fa-pen",
+                    text: "Manual updates"
+                }
+            ]
+        },
+
+
+        {
+            label: "BENEFIT 6",
+            title: "Secure & Reliable",
+            icon: "fas fa-shield-halved",
+
+            intro:
+                "AVA is designed to keep customer and business information " +
+                "organized while giving businesses control over how it is used.",
+
+            items: [
+                {
+                    title: "Controlled access",
+                    text:
+                        "Only authorized employees should be able to view " +
+                        "important customer and business information."
+                },
+                {
+                    title: "Clear data permissions",
+                    text:
+                        "Businesses can define which information AVA may " +
+                        "access and use."
+                },
+                {
+                    title: "Human review when necessary",
+                    text:
+                        "Sensitive or unusual situations can be transferred " +
+                        "to a member of staff."
+                },
+                {
+                    title: "Reliable customer communication",
+                    text:
+                        "AVA follows your approved services, policies and " +
+                        "communication preferences."
+                }
+            ],
+
+            highlightTitle:
+                "Your business remains in control",
+
+            highlightText:
+                "AVA supports your team while important decisions and " +
+                "business rules remain under human control.",
+
+            visualTitle:
+                "Security and control",
+
+            visualMainTitle:
+                "Designed around your business rules",
+
+            visualMainText:
+                "Control access, communication settings and when a human " +
+                "employee should take over.",
+
+            visualCards: [
+                {
+                    icon: "fas fa-lock",
+                    text: "Protected access"
+                },
+                {
+                    icon: "fas fa-user-shield",
+                    text: "Staff permissions"
+                },
+                {
+                    icon: "fas fa-sliders",
+                    text: "Business controls"
+                },
+                {
+                    icon: "fas fa-hand",
+                    text: "Human handover"
+                }
+            ]
+        }
+
+    ];
+
+
+    function createProgressDots() {
+
+        progressContainer.innerHTML = "";
+
+        benefits.forEach(function (benefit, index) {
+
+            const dot = document.createElement("button");
+
+            dot.type = "button";
+            dot.className = "why-progress-dot";
+
+            dot.setAttribute(
+                "aria-label",
+                `Open ${benefit.title}`
+            );
+
+            dot.addEventListener("click", function () {
+                changeBenefit(index);
+            });
+
+            progressContainer.appendChild(dot);
+        });
+    }
+
+
+    function createVisual(benefit) {
+
+        visualContent.innerHTML = "";
+
+        const mainCard =
+            document.createElement("div");
+
+        mainCard.className =
+            "why-visual-main-card";
+
+        mainCard.innerHTML = `
+            <h4>${benefit.visualMainTitle}</h4>
+            <p>${benefit.visualMainText}</p>
+        `;
+
+
+        const miniGrid =
+            document.createElement("div");
+
+        miniGrid.className =
+            "why-visual-mini-grid";
+
+
+        benefit.visualCards.forEach(function (card) {
+
+            const miniCard =
+                document.createElement("div");
+
+            miniCard.className =
+                "why-visual-mini-card";
+
+            miniCard.innerHTML = `
+                <i class="${card.icon}"></i>
+                <span>${card.text}</span>
+            `;
+
+            miniGrid.appendChild(miniCard);
+        });
+
+
+        visualContent.appendChild(mainCard);
+        visualContent.appendChild(miniGrid);
+    }
+
+
+    function displayBenefit(index) {
+
+        const benefit = benefits[index];
+
+        currentBenefit = index;
+
+        benefitLabel.textContent =
+            benefit.label;
+
+        modalTitle.textContent =
+            benefit.title;
+
+        modalIcon.innerHTML =
+            `<i class="${benefit.icon}"></i>`;
+
+        modalIntro.textContent =
+            benefit.intro;
+
+        highlightTitle.textContent =
+            benefit.highlightTitle;
+
+        highlightText.textContent =
+            benefit.highlightText;
+
+        visualTitle.textContent =
+            benefit.visualTitle;
+
+
+        modalList.innerHTML = "";
+
+        benefit.items.forEach(function (item) {
+
+            const listItem =
+                document.createElement("div");
+
+            listItem.className =
+                "why-list-item";
+
+            listItem.innerHTML = `
+                <div class="why-list-check">
+                    <i class="fas fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>${item.title}</strong>
+                    <p>${item.text}</p>
+                </div>
+            `;
+
+            modalList.appendChild(listItem);
+        });
+
+
+        supportedLanguagesButton.hidden =
+            !benefit.showLanguages;
+
+
+        createVisual(benefit);
+        updateProgress();
+        updateNavigation();
+    }
+
+
+    function changeBenefit(index) {
+
+        if (
+            index < 0 ||
+            index >= benefits.length ||
+            index === currentBenefit
+        ) {
+            return;
+        }
+
+        closeLanguageDrawer();
+
+        modalContent.classList.add(
+            "is-changing"
+        );
+
+        window.setTimeout(function () {
+
+            displayBenefit(index);
+
+            modalContent.classList.remove(
+                "is-changing"
+            );
+
+        }, 180);
+    }
+
+
+    function updateProgress() {
+
+        const dots =
+            progressContainer.querySelectorAll(
+                ".why-progress-dot"
+            );
+
+        dots.forEach(function (dot, index) {
+
+            dot.classList.toggle(
+                "is-active",
+                index === currentBenefit
+            );
+        });
+    }
+
+
+    function updateNavigation() {
+
+        previousButton.disabled =
+            currentBenefit === 0;
+
+        if (
+            currentBenefit ===
+            benefits.length - 1
+        ) {
+
+            nextButton.innerHTML = `
+                Close
+                <i class="fas fa-check"></i>
+            `;
+
+        } else {
+
+            const nextTitle =
+                benefits[currentBenefit + 1].title;
+
+            nextButton.innerHTML = `
+                Next: ${nextTitle}
+                <i class="fas fa-arrow-right"></i>
+            `;
+        }
+    }
+
+
+    function openModal(index, selectedCard) {
+
+        currentBenefit = index;
+        lastOpenedCard = selectedCard;
+
+        selectedCard.classList.add(
+            "is-opening"
+        );
+
+        displayBenefit(index);
+
+        window.setTimeout(function () {
+
+            modalOverlay.classList.add(
+                "is-visible"
+            );
+
+            modalOverlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "why-modal-open"
+            );
+
+            modalClose.focus();
+
+        }, 180);
+    }
+
+
+    function closeModal() {
+
+        closeLanguageDrawer();
+
+        modalOverlay.classList.remove(
+            "is-visible"
+        );
+
+        modalOverlay.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "why-modal-open"
+        );
+
+        window.setTimeout(function () {
+
+            if (lastOpenedCard) {
+
+                lastOpenedCard.classList.remove(
+                    "is-opening"
+                );
+
+                lastOpenedCard.focus();
+            }
+
+        }, 280);
+    }
+
+
+    function openLanguageDrawer() {
+
+        languageDrawer.classList.add(
+            "is-open"
+        );
+
+        languageDrawerScrim.classList.add(
+            "is-visible"
+        );
+
+        languageDrawer.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        window.setTimeout(function () {
+            languageDrawerClose.focus();
+        }, 200);
+    }
+
+
+    function closeLanguageDrawer() {
+
+        languageDrawer.classList.remove(
+            "is-open"
+        );
+
+        languageDrawerScrim.classList.remove(
+            "is-visible"
+        );
+
+        languageDrawer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+    }
+
+
+    benefitCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            const benefitIndex =
+                Number(card.dataset.benefit);
+
+            openModal(benefitIndex, card);
+        });
+    });
+
+
+    createProgressDots();
+
+
+    modalClose.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    previousButton.addEventListener(
+        "click",
+        function () {
+
+            changeBenefit(
+                currentBenefit - 1
+            );
+        }
+    );
+
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            if (
+                currentBenefit ===
+                benefits.length - 1
+            ) {
+                closeModal();
+                return;
+            }
+
+            changeBenefit(
+                currentBenefit + 1
+            );
+        }
+    );
+
+
+    supportedLanguagesButton.addEventListener(
+        "click",
+        openLanguageDrawer
+    );
+
+
+    languageDrawerClose.addEventListener(
+        "click",
+        closeLanguageDrawer
+    );
+
+
+    languageDrawerScrim.addEventListener(
+        "click",
+        closeLanguageDrawer
+    );
+
+
+    modalOverlay.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === modalOverlay &&
+                !languageDrawer.classList.contains(
+                    "is-open"
+                )
+            ) {
+                closeModal();
+            }
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                languageDrawer.classList.contains(
+                    "is-open"
+                )
+            ) {
+                closeLanguageDrawer();
+                return;
+            }
+
+            if (
+                event.key === "Escape" &&
+                modalOverlay.classList.contains(
+                    "is-visible"
+                )
+            ) {
+                closeModal();
+            }
+
+            if (
+                event.key === "ArrowRight" &&
+                modalOverlay.classList.contains(
+                    "is-visible"
+                ) &&
+                !languageDrawer.classList.contains(
+                    "is-open"
+                ) &&
+                currentBenefit < benefits.length - 1
+            ) {
+                changeBenefit(
+                    currentBenefit + 1
+                );
+            }
+
+            if (
+                event.key === "ArrowLeft" &&
+                modalOverlay.classList.contains(
+                    "is-visible"
+                ) &&
+                !languageDrawer.classList.contains(
+                    "is-open"
+                ) &&
+                currentBenefit > 0
+            ) {
+                changeBenefit(
+                    currentBenefit - 1
+                );
+            }
+        }
+    );
+
+});
