@@ -210,50 +210,73 @@ console.log("AVA Website Loaded Successfully");
 
 
 // =========================
-// DEV MODE PASSWORD
+// DEVELOPMENT SCREEN
 // =========================
 
 const DEV_PASSWORD = "AVA2026";
 
-document.addEventListener("keydown", function(e){
+document.addEventListener("DOMContentLoaded", function () {
 
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "b"){
+    const devScreen =
+        document.getElementById("dev-screen");
 
-        const password = prompt("Enter developer password:");
+    if (!devScreen) return;
 
-        if(password === DEV_PASSWORD){
-            const devScreen = document.getElementById("dev-screen");
+    /*
+       Remove the old saved unlock value from
+       the previous development-screen version.
+    */
 
-            if(devScreen){
-                devScreen.style.display = "none";
+    localStorage.removeItem("avaDevMode");
+
+    /*
+       Keep the website unlocked while the current
+       browser tab remains open.
+    */
+
+    if (
+        sessionStorage.getItem("avaDevPreview") === "true"
+    ) {
+        devScreen.classList.add("is-unlocked");
+    }
+
+
+    document.addEventListener("keydown", function (event) {
+
+        /*
+           Ctrl + Shift + B opens the password prompt.
+        */
+
+        if (
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase() === "b"
+        ) {
+            event.preventDefault();
+
+            const password = prompt(
+                "Enter AVA developer password:"
+            );
+
+            if (password === DEV_PASSWORD) {
+
+                sessionStorage.setItem(
+                    "avaDevPreview",
+                    "true"
+                );
+
+                devScreen.classList.add(
+                    "is-unlocked"
+                );
+
+            } else if (password !== null) {
+
+                alert("Wrong password");
             }
-
-            localStorage.setItem("avaDevMode", "true");
-        } else {
-            alert("Wrong password");
         }
-    }
+    });
 
 });
-
-
-// =========================
-// KEEP WEBSITE UNLOCKED
-// =========================
-
-window.addEventListener("load", function(){
-
-    if(localStorage.getItem("avaDevMode") === "true"){
-        const devScreen = document.getElementById("dev-screen");
-
-        if(devScreen){
-            devScreen.style.display = "none";
-        }
-    }
-
-});
-
-
 // =========================
 // SCROLL ANIMATIONS
 // =========================
