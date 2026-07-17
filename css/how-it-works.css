@@ -14,8 +14,8 @@
 ========================= */
 
 .how-heading {
-    max-width: 780px;
     margin: 0 auto 60px;
+    text-align: center;
 }
 
 .section-label {
@@ -23,53 +23,20 @@
     align-items: center;
     justify-content: center;
 
-    padding: 8px 18px;
-    margin-bottom: 20px;
+    min-width: 360px;
+    min-height: 100px;
+    padding: 20px 45px;
 
-    border: 1px solid #bfdbfe;
-    border-radius: 999px;
+    border: 2px solid #bfdbfe;
+    border-radius: 28px;
 
     background: #eff6ff;
     color: #2563eb;
 
-    font-size: 13px;
+    font-size: 32px;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
 }
-
-.how-heading h2 {
-    margin: 0 0 20px;
-
-    color: #0f172a;
-
-    font-size: clamp(42px, 5vw, 66px);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
-}
-
-.how-heading p {
-    max-width: 680px;
-    margin: 0 auto;
-
-    color: #64748b;
-
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.heading-line {
-    display: block;
-
-    width: 54px;
-    height: 3px;
-
-    margin: 23px auto 0;
-
-    border-radius: 999px;
-    background: #2563eb;
-}
-
-
 /* =========================
    STEP CARDS
 ========================= */
