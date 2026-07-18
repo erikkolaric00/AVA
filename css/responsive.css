@@ -601,3 +601,332 @@
         font-size: 15px !important;
     }
 }
+/* =========================================
+   NEW MOBILE NAVIGATION AND HERO OVERRIDES
+========================================= */
+
+/* Hidden on desktop */
+
+.mobile-menu-button {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 760px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 14px 18px;
+    }
+
+    .navbar .logo {
+        order: 1;
+
+        height: 48px;
+        width: auto;
+    }
+
+    .navbar .language-dropdown {
+        order: 2;
+
+        margin-left: auto;
+    }
+
+    .mobile-menu-button {
+        order: 3;
+
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        padding: 0;
+
+        border: 1px solid #bfdbfe;
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+        width: 20px;
+        height: 2px;
+
+        border-radius: 999px;
+
+        background: #2563eb;
+
+        transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+    }
+
+    /* Turn hamburger into X */
+
+    .navbar.nav-open
+    .mobile-menu-button span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .navbar.nav-open
+    .mobile-menu-button span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.nav-open
+    .mobile-menu-button span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .navbar .nav-links {
+        order: 4;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+        margin: 5px 0 0;
+        padding: 10px;
+
+        border: 1px solid #dbeafe;
+        border-radius: 16px;
+
+        background: #ffffff;
+
+        box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+    }
+
+    .navbar.nav-open .nav-links {
+        display: flex;
+    }
+
+    .navbar .nav-links li {
+        width: 100%;
+    }
+
+    .navbar .nav-links a {
+        width: 100%;
+
+        display: block;
+
+        padding: 12px 14px;
+
+        border-radius: 10px;
+
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .navbar .nav-links a:hover {
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+
+    /* =========================
+       MOBILE HERO
+    ========================= */
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 38px 18px 55px;
+
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 620px;
+
+        margin: 0 auto;
+    }
+
+    .hero-label {
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+        padding: 9px 13px;
+
+        white-space: normal;
+
+        font-size: 11px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        margin-top: 22px;
+
+        font-size: clamp(2.15rem, 9vw, 3rem);
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-text > p {
+        max-width: 520px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .hero-benefits {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+    .hero-benefits div {
+        min-height: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 9px 8px;
+
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .hero-buttons .primary-btn,
+    .hero-buttons .secondary-btn {
+        width: 100%;
+        min-height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 320px;
+
+        margin: 0 auto;
+    }
+
+    .hero-glow {
+        width: 300px;
+        height: 300px;
+    }
+
+    .dashboard-image-placeholder {
+        width: min(100%, 500px);
+        min-height: 230px;
+
+        margin: 0 auto;
+
+        transform: none;
+    }
+
+    .floating-stat {
+        width: 150px;
+
+        right: 0;
+        bottom: 0;
+    }
+
+    .floating-message {
+        display: none;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+
+    .navbar {
+        padding: 12px 14px;
+    }
+
+    .navbar .logo {
+        height: 43px;
+    }
+
+    .mobile-menu-button {
+        width: 41px;
+        height: 41px;
+    }
+
+    .hero-content {
+        padding: 32px 15px 45px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 9vw, 2.4rem);
+        letter-spacing: -1px;
+    }
+
+    .hero-text > p {
+        font-size: 15px;
+    }
+
+    .hero-benefits div {
+        font-size: 11px;
+    }
+
+    .hero-visual {
+        min-height: 245px;
+    }
+
+    .dashboard-image-placeholder {
+        min-height: 205px;
+    }
+
+    .floating-stat {
+        display: none;
+    }
+}
