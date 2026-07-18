@@ -576,3 +576,28 @@
         right:2%;
     }
 }
+/* Smaller blue section labels */
+
+.how-it-works .section-label,
+.why-ava .why-section-label,
+#pricing .pricing-section-label {
+    min-height: 48px !important;
+    padding: 10px 24px !important;
+
+    border: 1px solid #bfdbfe !important;
+    border-radius: 999px !important;
+
+    font-size: 18px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.04em !important;
+}
+
+@media (max-width: 600px) {
+    .how-it-works .section-label,
+    .why-ava .why-section-label,
+    #pricing .pricing-section-label {
+        min-height: 43px !important;
+        padding: 9px 19px !important;
+        font-size: 15px !important;
+    }
+}
