@@ -2106,3 +2106,63 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+// =========================
+// MOBILE NAVIGATION
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
+
+    const navbar =
+        document.querySelector(".navbar");
+
+    const navigationLinks =
+        document.querySelectorAll(".nav-links a");
+
+    if (!mobileMenuButton || !navbar) return;
+
+    mobileMenuButton.addEventListener("click", function () {
+        const menuIsOpen =
+            navbar.classList.toggle("nav-open");
+
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            String(menuIsOpen)
+        );
+
+        mobileMenuButton.setAttribute(
+            "aria-label",
+            menuIsOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+    });
+
+    navigationLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navbar.classList.remove("nav-open");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        });
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 760) {
+            navbar.classList.remove("nav-open");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+    });
+});
