@@ -18,24 +18,19 @@
     text-align: center;
 }
 
-.section-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.section-label{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    min-width: 260px;
-    min-height: 70px;
-    padding: 14px 30px;
+    min-height:42px;
+    padding:8px 20px;
 
-    border: 2px solid #bfdbfe;
-    border-radius: 22px;
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:.04em;
 
-    background: #eff6ff;
-    color: #2563eb;
-
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
+    border-radius:999px;
 }
 
 /* =========================
