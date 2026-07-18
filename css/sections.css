@@ -9,31 +9,3 @@
     font-size:2.8rem;
     margin-bottom:60px;
 }
-/* =========================
-   SMALLER SECTION HEADLINES
-========================= */
-
-.section-label,
-.why-section-label,
-.pricing-section-label {
-    min-height: 48px;
-    padding: 10px 24px;
-
-    border-width: 1px;
-    border-radius: 999px;
-
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-}
-
-@media (max-width: 600px) {
-    .section-label,
-    .why-section-label,
-    .pricing-section-label {
-        min-height: 43px;
-        padding: 9px 19px;
-
-        font-size: 15px;
-    }
-}
