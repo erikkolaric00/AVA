@@ -539,8 +539,7 @@
 /* Smaller blue section labels */
 
 .how-it-works .section-label,
-.why-ava .why-section-label,
-#pricing .pricing-section-label {
+.why-ava .why-section-label, {
     min-height: 48px !important;
     padding: 10px 24px !important;
 
@@ -554,8 +553,7 @@
 
 @media (max-width: 600px) {
     .how-it-works .section-label,
-    .why-ava .why-section-label,
-    #pricing .pricing-section-label {
+    .why-ava .why-section-label, {
         min-height: 43px !important;
         padding: 9px 19px !important;
         font-size: 15px !important;
