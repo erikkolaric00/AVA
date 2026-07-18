@@ -139,15 +139,19 @@
 
 </div>
     
-    <!-- HERO (NAV + MAIN HERO CONTENT) -->
-    <header class="hero">
+   <!-- HERO (NAV + MAIN HERO CONTENT) -->
+<header class="hero">
 
-        <div class="container">
+    <div class="container">
 
         <!-- NAVIGATION -->
         <nav class="navbar">
 
-            <img src="AVA-logo.png" alt="AVA Logo" class="logo">
+            <img
+                src="AVA-logo.png"
+                alt="AVA Logo"
+                class="logo"
+            >
 
             <ul class="nav-links">
                 <li><a href="#how-it-works">How It Works</a></li>
@@ -157,45 +161,85 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-        
-      <div class="language-dropdown">
 
-    <button class="language-btn" id="languageBtn">
-        <img src="https://flagcdn.com/w40/gb.png" alt="English">
-    </button>
+            <!-- LANGUAGE DROPDOWN -->
+            <div class="language-dropdown">
 
-    <div class="language-menu" id="languageMenu">
+                <button
+                    class="language-btn"
+                    id="languageBtn"
+                    type="button"
+                    aria-label="Choose language"
+                >
+                    <img
+                        src="https://flagcdn.com/w40/gb.png"
+                        alt="English"
+                    >
+                </button>
 
-       <button onclick="changeLanguage('en'); updateLanguageFlag('en')">
-    <img src="https://flagcdn.com/w40/gb.png" alt="English">
-</button>
+                <div
+                    class="language-menu"
+                    id="languageMenu"
+                >
 
-<button onclick="changeLanguage('sl'); updateLanguageFlag('sl')">
-    <img src="https://flagcdn.com/w40/si.png" alt="Slovenian">
-</button>
+                    <button
+                        type="button"
+                        onclick="changeLanguage('en'); updateLanguageFlag('en')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/gb.png"
+                            alt="English"
+                        >
+                    </button>
 
-<button onclick="changeLanguage('hr'); updateLanguageFlag('hr')">
-    <img src="https://flagcdn.com/w40/hr.png" alt="Croatian">
-</button>
+                    <button
+                        type="button"
+                        onclick="changeLanguage('sl'); updateLanguageFlag('sl')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/si.png"
+                            alt="Slovenian"
+                        >
+                    </button>
 
-<button onclick="changeLanguage('de'); updateLanguageFlag('de')">
-    <img src="https://flagcdn.com/w40/de.png" alt="German">
-</button>
+                    <button
+                        type="button"
+                        onclick="changeLanguage('hr'); updateLanguageFlag('hr')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/hr.png"
+                            alt="Croatian"
+                        >
+                    </button>
 
-    </div>
+                    <button
+                        type="button"
+                        onclick="changeLanguage('de'); updateLanguageFlag('de')"
+                    >
+                        <img
+                            src="https://flagcdn.com/w40/de.png"
+                            alt="German"
+                        >
+                    </button>
 
-</div>
+                </div>
+
+            </div>
+
+
+            <!-- MOBILE MENU BUTTON -->
             <button
-    class="mobile-menu-button"
-    id="mobileMenuButton"
-    type="button"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
->
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </nav>
 
         <!-- HERO CONTENT -->
