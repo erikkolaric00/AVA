@@ -1019,3 +1019,8 @@ body.modal-open {
         margin-bottom: 40px;
     }
 }
+.section-label {
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
