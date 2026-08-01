@@ -11,3 +11,34 @@ footer{
     height:60px;
     margin-bottom:20px;
 }
+.footer-legal-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px 24px;
+    margin: 18px 0;
+}
+
+.footer-legal-links a {
+    color: #64748b;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer-legal-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
