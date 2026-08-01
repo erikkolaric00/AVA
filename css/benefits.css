@@ -1226,3 +1226,8 @@ body.why-modal-open {
         grid-template-columns: 1fr 1fr;
     }
 }
+.why-section-label {
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
