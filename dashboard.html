@@ -191,99 +191,221 @@
             data-page-content="overview"
         >
 
-            <!-- STATISTICS -->
-            <section class="statistics-grid">
+          <!-- STATISTICS -->
+<section class="statistics-grid">
 
-                <article class="statistic-card">
+    <!-- NEW INQUIRIES -->
+    <article class="statistic-card">
 
-                    <div class="statistic-card-header">
+        <div class="statistic-card-header">
 
-                        <span class="statistic-icon blue">
-                            <i class="fa-regular fa-comments"></i>
-                        </span>
+            <span class="statistic-icon blue">
+                <i class="fa-regular fa-comments"></i>
+            </span>
 
-                        <h2>New inquiries</h2>
+            <h2>New inquiries</h2>
 
-                    </div>
+        </div>
 
-                    <strong class="statistic-number">42</strong>
+        <strong class="statistic-number">42</strong>
 
-                   <div class="statistic-change positive">
-    <i class="fa-solid fa-arrow-up"></i>
-    <span>24%</span>
-    <small class="comparison-period">this week</small>
-</div>
+        <div class="statistic-change positive">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>24%</span>
+            <small class="comparison-period">this week</small>
+        </div>
 
-                </article>
+        <div class="statistic-chart chart-blue" aria-hidden="true">
+            <svg viewBox="0 0 400 80" preserveAspectRatio="none">
 
+                <defs>
+                    <linearGradient
+                        id="blueChartFill"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                    >
+                        <stop
+                            offset="0%"
+                            stop-color="#4169ff"
+                            stop-opacity="0.20"
+                        ></stop>
 
-                <article class="statistic-card">
+                        <stop
+                            offset="100%"
+                            stop-color="#4169ff"
+                            stop-opacity="0.03"
+                        ></stop>
+                    </linearGradient>
+                </defs>
 
-                    <div class="statistic-card-header">
+                <path
+                    class="chart-fill"
+                    d="M0,58 C35,35 55,70 90,52 C125,34 145,75 180,58 C215,42 225,20 250,27 C280,35 295,65 325,48 C350,33 365,23 400,55 L400,80 L0,80 Z"
+                    fill="url(#blueChartFill)"
+                ></path>
 
-                        <span class="statistic-icon green">
-                            <i class="fa-regular fa-calendar-days"></i>
-                        </span>
+                <path
+                    class="chart-line"
+                    d="M0,58 C35,35 55,70 90,52 C125,34 145,75 180,58 C215,42 225,20 250,27 C280,35 295,65 325,48 C350,33 365,23 400,55"
+                ></path>
 
-                        <h2>New bookings</h2>
+            </svg>
+        </div>
 
-                    </div>
-
-                    <strong class="statistic-number">34</strong>
-
-             <div class="statistic-change positive">
-    <i class="fa-solid fa-arrow-up"></i>
-    <span>18%</span>
-    <small class="comparison-period">this week</small>
-</div>
-                </article>
-
-
-                <article class="statistic-card">
-
-                    <div class="statistic-card-header">
-
-                        <span class="statistic-icon purple">
-                            <i class="fa-regular fa-clock"></i>
-                        </span>
-
-                        <h2>Time saved</h2>
-
-                    </div>
-
-                    <strong class="statistic-number">2.57h</strong>
-
-            <div class="statistic-change positive">
-    <i class="fa-solid fa-arrow-up"></i>
-    <span>18%</span>
-    <small class="comparison-period">this week</small>
-</div>
-                </article>
+    </article>
 
 
-                <article class="statistic-card status-card">
+    <!-- NEW BOOKINGS -->
+    <article class="statistic-card">
 
-                    <div class="statistic-card-header">
+        <div class="statistic-card-header">
 
-                        <span class="online-indicator"></span>
+            <span class="statistic-icon green">
+                <i class="fa-regular fa-calendar-days"></i>
+            </span>
 
-                        <h2>AVA is online</h2>
+            <h2>New bookings</h2>
 
-                    </div>
+        </div>
 
-                    <div class="status-card-content">
-                        <p>All systems operational</p>
-                        <p>Since 00:01</p>
+        <strong class="statistic-number">34</strong>
 
-                        <span class="live-status">
-                            Live
-                        </span>
-                    </div>
+        <div class="statistic-change negative">
+            <i class="fa-solid fa-arrow-down"></i>
+            <span>8%</span>
+            <small class="comparison-period">this week</small>
+        </div>
 
-                </article>
+        <div class="statistic-chart chart-green" aria-hidden="true">
+            <svg viewBox="0 0 400 80" preserveAspectRatio="none">
 
-            </section>
+                <defs>
+                    <linearGradient
+                        id="greenChartFill"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                    >
+                        <stop
+                            offset="0%"
+                            stop-color="#16bd68"
+                            stop-opacity="0.19"
+                        ></stop>
 
+                        <stop
+                            offset="100%"
+                            stop-color="#16bd68"
+                            stop-opacity="0.03"
+                        ></stop>
+                    </linearGradient>
+                </defs>
+
+                <path
+                    class="chart-fill"
+                    d="M0,60 C28,43 42,64 70,55 C100,44 115,22 140,38 C165,53 180,47 205,68 C230,78 250,38 280,31 C305,24 318,62 340,53 C365,38 375,28 400,42 L400,80 L0,80 Z"
+                    fill="url(#greenChartFill)"
+                ></path>
+
+                <path
+                    class="chart-line"
+                    d="M0,60 C28,43 42,64 70,55 C100,44 115,22 140,38 C165,53 180,47 205,68 C230,78 250,38 280,31 C305,24 318,62 340,53 C365,38 375,28 400,42"
+                ></path>
+
+            </svg>
+        </div>
+
+    </article>
+
+
+    <!-- TIME SAVED -->
+    <article class="statistic-card">
+
+        <div class="statistic-card-header">
+
+            <span class="statistic-icon purple">
+                <i class="fa-regular fa-clock"></i>
+            </span>
+
+            <h2>Time saved</h2>
+
+        </div>
+
+        <strong class="statistic-number">2.57h</strong>
+
+        <div class="statistic-change positive">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>18%</span>
+            <small class="comparison-period">this week</small>
+        </div>
+
+        <div class="statistic-chart chart-purple" aria-hidden="true">
+            <svg viewBox="0 0 400 80" preserveAspectRatio="none">
+
+                <defs>
+                    <linearGradient
+                        id="purpleChartFill"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                    >
+                        <stop
+                            offset="0%"
+                            stop-color="#9845f5"
+                            stop-opacity="0.20"
+                        ></stop>
+
+                        <stop
+                            offset="100%"
+                            stop-color="#9845f5"
+                            stop-opacity="0.03"
+                        ></stop>
+                    </linearGradient>
+                </defs>
+
+                <path
+                    class="chart-fill"
+                    d="M0,67 C20,50 36,60 55,44 C80,23 100,63 130,58 C160,56 185,70 210,57 C240,42 255,48 280,45 C305,42 325,9 350,19 C372,26 384,41 400,35 L400,80 L0,80 Z"
+                    fill="url(#purpleChartFill)"
+                ></path>
+
+                <path
+                    class="chart-line"
+                    d="M0,67 C20,50 36,60 55,44 C80,23 100,63 130,58 C160,56 185,70 210,57 C240,42 255,48 280,45 C305,42 325,9 350,19 C372,26 384,41 400,35"
+                ></path>
+
+            </svg>
+        </div>
+
+    </article>
+
+
+    <!-- AVA STATUS -->
+    <article class="statistic-card status-card">
+
+        <div class="statistic-card-header">
+
+            <span class="online-indicator"></span>
+
+            <h2>AVA is online</h2>
+
+        </div>
+
+        <div class="status-card-content">
+            <p>All systems operational</p>
+            <p>Since 00:01</p>
+
+            <span class="live-status">
+                Live
+            </span>
+        </div>
+
+    </article>
+
+</section>
 
             <!-- DASHBOARD PANELS -->
             <section class="overview-grid">
