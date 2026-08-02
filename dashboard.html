@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>AVA Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard-app.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="AVA-logo.png" alt="AVA Logo">
+                <span>AVA</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="active">Overview</a>
+                <a href="#">Bookings</a>
+                <a href="#">Messages</a>
+                <a href="#">Customers</a>
+                <a href="#">Insights</a>
+                <a href="#">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <div>
+                    <p class="dashboard-label">OVERVIEW</p>
+                    <h1>Good morning</h1>
+                    <p>Here is what is happening with your business today.</p>
+                </div>
+
+                <button class="primary-button" id="addBookingButton">
+                    + Add booking
+                </button>
+            </header>
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <p>Today's bookings</p>
+                    <h2>12</h2>
+                    <span>3 upcoming</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Customer inquiries</p>
+                    <h2>28</h2>
+                    <span>Calls, chat and email</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>AVA resolved</p>
+                    <h2>24</h2>
+                    <span>86% resolution rate</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Estimated time saved</p>
+                    <h2>6.5h</h2>
+                    <span>Today</span>
+                </article>
+
+            </section>
+
+            <section class="dashboard-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="dashboard-label">BOOKINGS</p>
+                        <h2>Upcoming bookings</h2>
+                    </div>
+
+                    <button class="secondary-button">View all</button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="bookingTable">
+                            <tr>
+                                <td>Ana Novak</td>
+                                <td>Consultation</td>
+                                <td>2 Aug 2026</td>
+                                <td>12:30</td>
+                                <td><span class="status confirmed">Confirmed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Marko Horvat</td>
+                                <td>Appointment</td>
+                                <td>2 Aug 2026</td>
+                                <td>14:00</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Laura Kovač</td>
+                                <td>Follow-up</td>
+                                <td>2 Aug 2026</td>
+                                <td>16:15</td>
+                                <td><span class="status confirmed">Confirmed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <div class="modal hidden" id="bookingModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Add booking</h2>
+                <button id="closeModalButton">×</button>
+            </div>
+
+            <form id="bookingForm">
+
+                <label>
+                    Customer name
+                    <input type="text" id="customerName" required>
+                </label>
+
+                <label>
+                    Service
+                    <input type="text" id="serviceName" required>
+                </label>
+
+                <label>
+                    Date
+                    <input type="date" id="bookingDate" required>
+                </label>
+
+                <label>
+                    Time
+                    <input type="time" id="bookingTime" required>
+                </label>
+
+                <button type="submit" class="primary-button">
+                    Save booking
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard-app.js"></script>
+</body>
+</html>
