@@ -30,7 +30,7 @@
     --dashboard-purple: #9a42ff;
     --dashboard-purple-light: #f3eaff;
 
-    --dashboard-sidebar-width: 250px;
+    --dashboard-sidebar-width: 195px;
 
     --dashboard-radius-large: 32px;
     --dashboard-radius-medium: 22px;
@@ -151,7 +151,7 @@ img {
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 26px 18px 20px;
+    padding: 20px 12px 16px;
 
     background: rgba(255, 255, 255, 0.9);
     border-right: 1px solid rgba(222, 231, 245, 0.9);
@@ -177,10 +177,8 @@ img {
 }
 
 .dashboard-logo img {
-    width: 84px;
-    height: 42px;
-
-    object-fit: contain;
+    width: 72px;
+    height: auto;
 }
 
 .sidebar-navigation {
@@ -196,7 +194,7 @@ img {
     align-items: center;
     gap: 15px;
 
-    padding: 14px 16px;
+    padding: 12px 14px;
 
     color: #30384a;
     background: transparent;
@@ -331,12 +329,8 @@ img {
     min-width: 0;
     min-height: 100vh;
 
-    padding:
-        20px
-        clamp(22px, 3vw, 46px)
-        40px;
+    padding: 22px 30px 40px;
 }
-
 
 /* =========================
    TOP BAR
@@ -484,23 +478,23 @@ img {
 
 .statistics-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 
-    margin-bottom: 26px;
+    margin-bottom: 24px;
 }
 
 .statistic-card {
-    min-height: 194px;
+    min-height: 150px;
 
     display: flex;
     flex-direction: column;
 
-    padding: 24px 26px;
+    padding: 18px 20px;
 
     background: var(--dashboard-card);
     border: 1px solid rgba(231, 237, 247, 0.8);
-    border-radius: var(--dashboard-radius-large);
+    border-radius: 28px;
 
     box-shadow: var(--dashboard-shadow);
 
@@ -515,13 +509,13 @@ img {
 }
 
 .statistic-card-header h2 {
-    font-size: 1.03rem;
+    font-size: 0.95rem;
     font-weight: 700;
 }
 
 .statistic-icon {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
 
     flex: 0 0 auto;
 
@@ -530,9 +524,8 @@ img {
 
     border-radius: 50%;
 
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
-
 .statistic-icon.blue {
     color: var(--dashboard-blue);
     background: var(--dashboard-blue-light);
@@ -551,22 +544,22 @@ img {
 .statistic-number {
     display: block;
 
-    margin: 14px 0 16px;
-    padding-left: 58px;
+    margin: 10px 0 10px;
+    padding-left: 50px;
 
     color: #0c111d;
 
-    font-size: clamp(2.15rem, 3vw, 3rem);
+    font-size: 2.8rem;
     line-height: 1;
     letter-spacing: -0.04em;
 }
 
 .statistic-change {
     margin-top: auto;
-    padding-left: 58px;
+    padding-left: 50px;
 
     color: #222b3c;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .statistic-change span {
@@ -1258,7 +1251,30 @@ img {
 
 @media (max-width: 1350px) {
     .statistics-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .statistic-card {
+        padding: 20px;
+    }
+
+    .statistic-card-header {
+        gap: 10px;
+    }
+
+    .statistic-card-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .statistic-number {
+        padding-left: 0;
+        font-size: 2.2rem;
+    }
+
+    .statistic-change {
+        padding-left: 0;
+        font-size: 0.78rem;
     }
 
     .overview-grid {
@@ -1270,7 +1286,11 @@ img {
     }
 }
 
-
+@media (max-width: 1050px) {
+    .statistics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 /* =========================
    RESPONSIVE - TABLETS
 ========================= */
