@@ -2,167 +2,973 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>AVA Dashboard</title>
 
-    <link rel="stylesheet" href="css/dashboard-app.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard-app.css"
+    >
 </head>
 
 <body>
 
-    <div class="dashboard-layout">
+<div class="dashboard-layout">
 
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <img src="AVA-logo.png" alt="AVA Logo">
-                <span>AVA</span>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="dashboard-logo">
+                <img
+                    src="AVA-logo.png"
+                    alt="AVA Logo"
+                >
+            </a>
+
+            <nav class="sidebar-navigation">
+
+                <button
+                    type="button"
+                    class="sidebar-link active"
+                    data-page="overview"
+                >
+                    <i class="fa-solid fa-border-all"></i>
+                    <span>Overview</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="conversations"
+                >
+                    <i class="fa-regular fa-comments"></i>
+                    <span>Conversations</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="bookings"
+                >
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span>Bookings</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="analytics"
+                >
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Analytics</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="knowledge"
+                >
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Knowledge base</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="customers"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Customers</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="reports"
+                >
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span>Reports</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="sidebar-link"
+                    data-page="settings"
+                >
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </button>
+
+            </nav>
+
+        </div>
+
+        <button
+            type="button"
+            class="business-profile"
+            id="businessProfileButton"
+        >
+            <span class="business-avatar">
+                <i class="fa-solid fa-user"></i>
+            </span>
+
+            <span class="business-profile-text">
+                <strong>Demo Business</strong>
+                <small>Administrator</small>
+            </span>
+
+            <i class="fa-solid fa-chevron-down profile-arrow"></i>
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <!-- TOP BAR -->
+        <header class="dashboard-topbar">
+
+            <button
+                type="button"
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open navigation"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-title">
+                <p>Sunday, 2 August 2026</p>
+                <h1>Good morning</h1>
             </div>
 
-            <nav class="sidebar-nav">
-                <a href="#" class="active">Overview</a>
-                <a href="#">Bookings</a>
-                <a href="#">Messages</a>
-                <a href="#">Customers</a>
-                <a href="#">Insights</a>
-                <a href="#">Settings</a>
-            </nav>
-        </aside>
+            <div class="topbar-actions">
 
-        <main class="dashboard-main">
+                <label class="dashboard-search">
+                    <span class="sr-only">Search dashboard</span>
 
-            <header class="dashboard-header">
-                <div>
-                    <p class="dashboard-label">OVERVIEW</p>
-                    <h1>Good morning</h1>
-                    <p>Here is what is happening with your business today.</p>
-                </div>
+                    <input
+                        type="search"
+                        id="dashboardSearch"
+                        placeholder="Search..."
+                    >
 
-                <button class="primary-button" id="addBookingButton">
-                    + Add booking
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                    aria-label="Open notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-count">3</span>
                 </button>
-            </header>
 
-            <section class="stats-grid">
+            </div>
 
-                <article class="stat-card">
-                    <p>Today's bookings</p>
-                    <h2>12</h2>
-                    <span>3 upcoming</span>
-                </article>
+        </header>
 
-                <article class="stat-card">
-                    <p>Customer inquiries</p>
-                    <h2>28</h2>
-                    <span>Calls, chat and email</span>
-                </article>
 
-                <article class="stat-card">
-                    <p>AVA resolved</p>
-                    <h2>24</h2>
-                    <span>86% resolution rate</span>
-                </article>
+        <!-- OVERVIEW PAGE -->
+        <section
+            class="dashboard-page active"
+            id="overviewPage"
+            data-page-content="overview"
+        >
 
-                <article class="stat-card">
-                    <p>Estimated time saved</p>
-                    <h2>6.5h</h2>
-                    <span>Today</span>
-                </article>
+            <!-- STATISTICS -->
+            <section class="statistics-grid">
 
-            </section>
+                <article class="statistic-card">
 
-            <section class="dashboard-panel">
-                <div class="panel-header">
-                    <div>
-                        <p class="dashboard-label">BOOKINGS</p>
-                        <h2>Upcoming bookings</h2>
+                    <div class="statistic-card-header">
+
+                        <span class="statistic-icon blue">
+                            <i class="fa-regular fa-comments"></i>
+                        </span>
+
+                        <h2>New inquiries</h2>
+
                     </div>
 
-                    <button class="secondary-button">View all</button>
-                </div>
+                    <strong class="statistic-number">42</strong>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Customer</th>
-                                <th>Service</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
+                    <p class="statistic-change">
+                        Up
+                        <span>24%</span>
+                        versus yesterday
+                    </p>
 
-                        <tbody id="bookingTable">
-                            <tr>
-                                <td>Ana Novak</td>
-                                <td>Consultation</td>
-                                <td>2 Aug 2026</td>
-                                <td>12:30</td>
-                                <td><span class="status confirmed">Confirmed</span></td>
-                            </tr>
+                </article>
 
-                            <tr>
-                                <td>Marko Horvat</td>
-                                <td>Appointment</td>
-                                <td>2 Aug 2026</td>
-                                <td>14:00</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
 
-                            <tr>
-                                <td>Laura Kovač</td>
-                                <td>Follow-up</td>
-                                <td>2 Aug 2026</td>
-                                <td>16:15</td>
-                                <td><span class="status confirmed">Confirmed</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <article class="statistic-card">
+
+                    <div class="statistic-card-header">
+
+                        <span class="statistic-icon green">
+                            <i class="fa-regular fa-calendar-days"></i>
+                        </span>
+
+                        <h2>New bookings</h2>
+
+                    </div>
+
+                    <strong class="statistic-number">34</strong>
+
+                    <p class="statistic-change">
+                        Up
+                        <span>18%</span>
+                        versus yesterday
+                    </p>
+
+                </article>
+
+
+                <article class="statistic-card">
+
+                    <div class="statistic-card-header">
+
+                        <span class="statistic-icon purple">
+                            <i class="fa-regular fa-clock"></i>
+                        </span>
+
+                        <h2>Time saved</h2>
+
+                    </div>
+
+                    <strong class="statistic-number">2.57h</strong>
+
+                    <p class="statistic-change">
+                        Up
+                        <span>14%</span>
+                        versus yesterday
+                    </p>
+
+                </article>
+
+
+                <article class="statistic-card status-card">
+
+                    <div class="statistic-card-header">
+
+                        <span class="online-indicator"></span>
+
+                        <h2>AVA is online</h2>
+
+                    </div>
+
+                    <div class="status-card-content">
+                        <p>All systems operational</p>
+                        <p>Since 00:01</p>
+
+                        <span class="live-status">
+                            Live
+                        </span>
+                    </div>
+
+                </article>
+
             </section>
 
-        </main>
 
-    </div>
+            <!-- DASHBOARD PANELS -->
+            <section class="overview-grid">
 
-    <div class="modal hidden" id="bookingModal">
-        <div class="modal-card">
-            <div class="modal-header">
-                <h2>Add booking</h2>
-                <button id="closeModalButton">×</button>
+                <!-- RECENT ACTIVITY -->
+                <article class="dashboard-panel">
+
+                    <div class="panel-heading">
+                        <h2>Recent activity</h2>
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <time>09:12</time>
+
+                            <span class="activity-icon blue">
+                                <i class="fa-regular fa-comments"></i>
+                            </span>
+
+                            <p>AVA answered a booking inquiry</p>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <time>09:27</time>
+
+                            <span class="activity-icon green">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <p>Appointment booked for 14:00</p>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <time>10:03</time>
+
+                            <span class="activity-icon blue">
+                                <i class="fa-regular fa-comments"></i>
+                            </span>
+
+                            <p>Customer asked about available services</p>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <time>10:18</time>
+
+                            <span class="activity-icon red">
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+
+                            <p>Booking cancelled by customer</p>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <time>10:41</time>
+
+                            <span class="activity-icon blue">
+                                <i class="fa-solid fa-globe"></i>
+                            </span>
+
+                            <p>AVA answered a customer in German</p>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <time>11:02</time>
+
+                            <span class="activity-icon green">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <p>New booking successfully confirmed</p>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="panel-action-button"
+                        data-action="view-activity"
+                    >
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </article>
+
+
+                <!-- CUSTOMER INSIGHTS -->
+                <article class="dashboard-panel insights-panel">
+
+                    <div class="panel-heading">
+                        <h2>Customer opportunity insights</h2>
+                    </div>
+
+                    <div class="insights-list">
+
+                        <div class="insight-item">
+
+                            <p>Asked about premium services</p>
+
+                            <div class="insight-bar">
+
+                                <span
+                                    class="insight-positive"
+                                    style="width: 30%;"
+                                >
+                                    30%
+                                </span>
+
+                                <span
+                                    class="insight-negative"
+                                    style="width: 70%;"
+                                >
+                                    70%
+                                </span>
+
+                            </div>
+
+                            <div class="insight-labels">
+                                <span>30% purchased</span>
+                                <span>70% did not purchase</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight-item">
+
+                            <p>Asked about availability</p>
+
+                            <div class="insight-bar">
+
+                                <span
+                                    class="insight-positive"
+                                    style="width: 67%;"
+                                >
+                                    67%
+                                </span>
+
+                                <span
+                                    class="insight-negative"
+                                    style="width: 33%;"
+                                >
+                                    33%
+                                </span>
+
+                            </div>
+
+                            <div class="insight-labels">
+                                <span>67% booked</span>
+                                <span>33% did not book</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight-item">
+
+                            <p>Asked about additional options</p>
+
+                            <div class="insight-bar">
+
+                                <span
+                                    class="insight-positive"
+                                    style="width: 22%;"
+                                >
+                                    22%
+                                </span>
+
+                                <span
+                                    class="insight-negative"
+                                    style="width: 78%;"
+                                >
+                                    78%
+                                </span>
+
+                            </div>
+
+                            <div class="insight-labels">
+                                <span>22% purchased</span>
+                                <span>78% did not purchase</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight-item">
+
+                            <p>Asked about booking</p>
+
+                            <div class="insight-bar">
+
+                                <span
+                                    class="insight-positive"
+                                    style="width: 45%;"
+                                >
+                                    45%
+                                </span>
+
+                                <span
+                                    class="insight-negative"
+                                    style="width: 55%;"
+                                >
+                                    55%
+                                </span>
+
+                            </div>
+
+                            <div class="insight-labels">
+                                <span>45% booked</span>
+                                <span>55% did not book</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight-item">
+
+                            <p>After-hours inquiries</p>
+
+                            <div class="insight-bar">
+
+                                <span
+                                    class="insight-positive"
+                                    style="width: 37%;"
+                                >
+                                    37%
+                                </span>
+
+                                <span
+                                    class="insight-negative"
+                                    style="width: 63%;"
+                                >
+                                    63%
+                                </span>
+
+                            </div>
+
+                            <div class="insight-labels">
+                                <span>37% converted</span>
+                                <span>63% did not convert</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="panel-action-button"
+                        data-action="view-insights"
+                    >
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </article>
+
+
+                <!-- TODAY'S BOOKINGS -->
+                <article class="dashboard-panel">
+
+                    <div class="panel-heading">
+                        <h2>Today’s bookings</h2>
+                    </div>
+
+                    <div
+                        class="booking-list"
+                        id="todayBookingList"
+                    >
+
+                        <div class="booking-item">
+
+                            <time>12:00</time>
+
+                            <span class="booking-icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <div class="booking-details">
+                                <strong>John Smith</strong>
+                                <span>Consultation</span>
+                            </div>
+
+                            <span class="booking-size">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-item">
+
+                            <time>12:30</time>
+
+                            <span class="booking-icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <div class="booking-details">
+                                <strong>Anna Müller</strong>
+                                <span>Premium service</span>
+                            </div>
+
+                            <span class="booking-size">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-item">
+
+                            <time>13:15</time>
+
+                            <span class="booking-icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <div class="booking-details">
+                                <strong>Marko Horvat</strong>
+                                <span>Appointment</span>
+                            </div>
+
+                            <span class="booking-size">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-item">
+
+                            <time>18:00</time>
+
+                            <span class="booking-icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <div class="booking-details">
+                                <strong>Sarah Johnson</strong>
+                                <span>Follow-up meeting</span>
+                            </div>
+
+                            <span class="booking-size">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-item">
+
+                            <time>19:00</time>
+
+                            <span class="booking-icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <div class="booking-details">
+                                <strong>Luka Petrović</strong>
+                                <span>Consultation</span>
+                            </div>
+
+                            <span class="booking-size">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-item">
+
+                            <time>20:30</time>
+
+                            <span class="booking-icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </span>
+
+                            <div class="booking-details">
+                                <strong>Emily Davis</strong>
+                                <span>Special request</span>
+                            </div>
+
+                            <span class="booking-size">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="panel-action-button"
+                        data-action="view-bookings"
+                    >
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </article>
+
+            </section>
+
+        </section>
+
+
+        <!-- PLACEHOLDER PAGES -->
+        <section
+            class="dashboard-page"
+            id="conversationsPage"
+            data-page-content="conversations"
+        >
+            <div class="empty-page">
+                <i class="fa-regular fa-comments"></i>
+                <h2>Conversations</h2>
+                <p>Customer calls, emails and chats will appear here.</p>
+            </div>
+        </section>
+
+
+        <section
+            class="dashboard-page"
+            id="bookingsPage"
+            data-page-content="bookings"
+        >
+            <div class="page-heading">
+
+                <div>
+                    <p>BOOKINGS</p>
+                    <h2>Manage bookings</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-dashboard-button"
+                    id="addBookingButton"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add booking
+                </button>
+
             </div>
 
-            <form id="bookingForm">
+            <div class="empty-page">
+                <i class="fa-regular fa-calendar-days"></i>
+                <h2>Booking calendar</h2>
+                <p>Your complete booking calendar will be added here.</p>
+            </div>
+        </section>
 
-                <label>
-                    Customer name
-                    <input type="text" id="customerName" required>
-                </label>
 
-                <label>
-                    Service
-                    <input type="text" id="serviceName" required>
-                </label>
+        <section
+            class="dashboard-page"
+            id="analyticsPage"
+            data-page-content="analytics"
+        >
+            <div class="empty-page">
+                <i class="fa-solid fa-chart-column"></i>
+                <h2>Analytics</h2>
+                <p>AVA performance and business analytics will appear here.</p>
+            </div>
+        </section>
+
+
+        <section
+            class="dashboard-page"
+            id="knowledgePage"
+            data-page-content="knowledge"
+        >
+            <div class="empty-page">
+                <i class="fa-solid fa-book-open"></i>
+                <h2>Knowledge base</h2>
+                <p>Add business information that AVA can use when answering customers.</p>
+            </div>
+        </section>
+
+
+        <section
+            class="dashboard-page"
+            id="customersPage"
+            data-page-content="customers"
+        >
+            <div class="empty-page">
+                <i class="fa-regular fa-user"></i>
+                <h2>Customers</h2>
+                <p>Customer profiles and booking history will appear here.</p>
+            </div>
+        </section>
+
+
+        <section
+            class="dashboard-page"
+            id="reportsPage"
+            data-page-content="reports"
+        >
+            <div class="empty-page">
+                <i class="fa-regular fa-file-lines"></i>
+                <h2>Reports</h2>
+                <p>Weekly and monthly AVA reports will appear here.</p>
+            </div>
+        </section>
+
+
+        <section
+            class="dashboard-page"
+            id="settingsPage"
+            data-page-content="settings"
+        >
+            <div class="empty-page">
+                <i class="fa-solid fa-gear"></i>
+                <h2>Settings</h2>
+                <p>Manage business information, opening hours and AVA preferences.</p>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- BOOKING MODAL -->
+<div
+    class="dashboard-modal hidden"
+    id="bookingModal"
+>
+
+    <div class="modal-overlay"></div>
+
+    <div
+        class="dashboard-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bookingModalTitle"
+    >
+
+        <div class="modal-heading">
+
+            <div>
+                <p>NEW BOOKING</p>
+                <h2 id="bookingModalTitle">Add booking</h2>
+            </div>
+
+            <button
+                type="button"
+                class="modal-close-button"
+                id="closeBookingModal"
+                aria-label="Close booking form"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <form id="bookingForm">
+
+            <label>
+                Customer name
+
+                <input
+                    type="text"
+                    id="bookingCustomer"
+                    placeholder="Enter customer name"
+                    required
+                >
+            </label>
+
+            <label>
+                Service
+
+                <input
+                    type="text"
+                    id="bookingService"
+                    placeholder="Enter service"
+                    required
+                >
+            </label>
+
+            <div class="form-row">
 
                 <label>
                     Date
-                    <input type="date" id="bookingDate" required>
+
+                    <input
+                        type="date"
+                        id="bookingDate"
+                        required
+                    >
                 </label>
 
                 <label>
                     Time
-                    <input type="time" id="bookingTime" required>
+
+                    <input
+                        type="time"
+                        id="bookingTime"
+                        required
+                    >
                 </label>
 
-                <button type="submit" class="primary-button">
-                    Save booking
-                </button>
+            </div>
 
-            </form>
+            <button
+                type="submit"
+                class="primary-dashboard-button full-width-button"
+            >
+                Save booking
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- NOTIFICATIONS -->
+<div
+    class="notifications-panel hidden"
+    id="notificationsPanel"
+>
+
+    <div class="notifications-heading">
+
+        <h2>Notifications</h2>
+
+        <button
+            type="button"
+            id="closeNotificationsButton"
+            aria-label="Close notifications"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <div class="notification-item">
+        <span class="notification-dot"></span>
+
+        <div>
+            <strong>New booking</strong>
+            <p>Anna Müller booked an appointment.</p>
+            <time>5 minutes ago</time>
         </div>
     </div>
 
-    <script src="js/dashboard-app.js"></script>
+    <div class="notification-item">
+        <span class="notification-dot"></span>
+
+        <div>
+            <strong>Customer needs help</strong>
+            <p>AVA transferred one conversation for review.</p>
+            <time>18 minutes ago</time>
+        </div>
+    </div>
+
+    <div class="notification-item">
+        <span class="notification-dot"></span>
+
+        <div>
+            <strong>Daily report ready</strong>
+            <p>Your daily AVA report is available.</p>
+            <time>1 hour ago</time>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="js/dashboard-app.js"></script>
+
 </body>
 </html>
