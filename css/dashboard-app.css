@@ -2083,3 +2083,8 @@ and “versus yesterday”.
         padding-left: 0;
     }
 }
+.statistic-change small {
+    color: #687386;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
