@@ -2088,3 +2088,250 @@ and “versus yesterday”.
     font-size: 0.8rem;
     font-weight: 400;
 }
+/* ==================================================
+   CLEAN KPI CARDS
+================================================== */
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.statistic-card {
+    position: relative;
+    min-width: 0;
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(225, 233, 247, 0.95);
+    border-radius: 28px;
+
+    box-shadow:
+        0 18px 45px rgba(55, 82, 140, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.statistic-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 23px 52px rgba(55, 82, 140, 0.12);
+}
+
+.statistic-card-header {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.statistic-card-header h2 {
+    color: #172033;
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.statistic-icon {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+}
+
+.statistic-icon.blue {
+    color: #4169ff;
+    background: #edf2ff;
+}
+
+.statistic-icon.green {
+    color: #17bd68;
+    background: #e9faef;
+}
+
+.statistic-icon.purple {
+    color: #9845f5;
+    background: #f4eaff;
+}
+
+
+/* Main KPI number */
+
+.statistic-number,
+.statistic-card:nth-child(1) .statistic-number,
+.statistic-card:nth-child(2) .statistic-number,
+.statistic-card:nth-child(3) .statistic-number {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    margin: 25px 0 19px;
+    padding-left: 62px;
+
+    color: #111827;
+
+    font-size: clamp(2.8rem, 3vw, 3.7rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+
+/* Percentage comparison */
+
+.statistic-change {
+    position: relative;
+    z-index: 2;
+
+    margin-top: auto;
+    padding-left: 62px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.statistic-change i {
+    font-size: 0.7rem;
+}
+
+.statistic-change span {
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.statistic-change small {
+    margin-left: 3px;
+
+    color: #929caf;
+
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+
+/* Increase */
+
+.statistic-change.positive,
+.statistic-change.positive span,
+.statistic-change.positive i {
+    color: #16b866;
+}
+
+
+/* Decrease */
+
+.statistic-change.negative,
+.statistic-change.negative span,
+.statistic-change.negative i {
+    color: #ef4056;
+}
+
+
+/* Smaller decorative wave */
+
+.statistic-card:not(.status-card)::before {
+    content: "";
+
+    position: absolute;
+    left: -5%;
+    right: -5%;
+    bottom: -42px;
+
+    height: 76px;
+
+    border-radius: 50% 50% 0 0;
+
+    opacity: 0.55;
+}
+
+.statistic-card:nth-child(1)::before {
+    background: rgba(65, 105, 255, 0.12);
+}
+
+.statistic-card:nth-child(2)::before {
+    background: rgba(23, 189, 104, 0.12);
+}
+
+.statistic-card:nth-child(3)::before {
+    background: rgba(152, 69, 245, 0.11);
+}
+
+
+/* Remove old extra wave */
+
+.statistic-card:not(.status-card)::after {
+    display: none;
+}
+
+
+/* AVA online card */
+
+.status-card {
+    min-height: 210px;
+}
+
+.status-card-content {
+    margin-top: 18px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .statistics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statistic-number,
+    .statistic-change {
+        padding-left: 62px;
+    }
+}
+
+@media (max-width: 420px) {
+    .statistic-number,
+    .statistic-change {
+        padding-left: 0;
+    }
+
+    .statistic-number {
+        margin-top: 27px;
+    }
+}
