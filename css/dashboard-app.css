@@ -1,1 +1,285 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f8fc;
+    color: #172033;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.dashboard-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+.sidebar {
+    background: #ffffff;
+    border-right: 1px solid #e5eaf2;
+    padding: 24px 18px;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sidebar-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-nav a {
+    color: #617089;
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #eaf2ff;
+    color: #2563eb;
+}
+
+.dashboard-main {
+    padding: 32px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+.dashboard-header p {
+    color: #718096;
+}
+
+.dashboard-label {
+    color: #2563eb !important;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.primary-button,
+.secondary-button {
+    border: none;
+    border-radius: 12px;
+    padding: 11px 16px;
+    font-weight: 600;
+}
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary-button {
+    background: #edf2f7;
+    color: #25324a;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.stat-card,
+.dashboard-panel {
+    background: white;
+    border: 1px solid #e6ebf2;
+    border-radius: 18px;
+}
+
+.stat-card {
+    padding: 20px;
+}
+
+.stat-card p {
+    color: #718096;
+    margin-bottom: 14px;
+}
+
+.stat-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.stat-card span {
+    color: #8b97aa;
+    font-size: 0.9rem;
+}
+
+.dashboard-panel {
+    padding: 24px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 15px 12px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+th {
+    color: #7b8799;
+    font-size: 0.85rem;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.confirmed {
+    background: #e8f8ef;
+    color: #198754;
+}
+
+.status.pending {
+    background: #fff4d8;
+    color: #a66c00;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.48);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-card {
+    width: 100%;
+    max-width: 460px;
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header button {
+    border: none;
+    background: transparent;
+    font-size: 1.8rem;
+}
+
+#bookingForm {
+    display: grid;
+    gap: 16px;
+}
+
+#bookingForm label {
+    display: grid;
+    gap: 7px;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+#bookingForm input {
+    width: 100%;
+    border: 1px solid #dbe1ea;
+    border-radius: 10px;
+    padding: 11px 12px;
+}
+
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e5eaf2;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .dashboard-main {
+        padding: 20px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
